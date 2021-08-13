@@ -1,0 +1,38 @@
+$default-color: #111111;
+$accent-color: #eed490;
+$bg-light: #fdfbf3;
+$bg-dark: #f6e7c0;
+$bg-darking: #665e4a;
+$darking-hov: #9a8a62;
+$bg-footer: #333029;
+
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Roboto', sans-serif;
+
+%title-1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+%title-2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: normal;
+}
+
+%title-4{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+%title-6{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+}
