@@ -10,3 +10,40 @@ body {
 	margin: 0 auto;
 	padding: 0 15px;
 }
+
+
+
+.menu{
+	margin: 0 auto;
+	&__list{
+		display: flex;
+	}
+	&__item{
+		margin-left: 25px;
+	}
+	&__link{
+		padding: 15px 20px;
+		color: #fff;
+        display: inline-block;
+		transition: all .3s;
+		&:hover{
+			background-color: $darking-hov;
+		}
+	}
+}
+
+.social{
+	&__list{
+		display: flex;
+	}
+	&__item{
+		margin-left: 15px;
+	}
+	&__link{
+		display: inline-block;
+	}
+}
+
+.circles-text{
+	@extend %title-1;
+}
