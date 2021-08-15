@@ -152,5 +152,49 @@
     }
 }
 
+.services{
+    padding: 30px 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    &__image{
+        flex: 0 0 25%;
+        max-width: 25%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &.left{
+            background-image: url('../images/service-web.jpeg');
+        }
+        &.right{
+            background-image: url('../images/service_design.png');
+        }
+    }
+    &__content{
+       padding: 60px 20px 0;
+       background-color: $bg-light;
+    }
+    &__title{
+        @extend %title-4;
+        margin-bottom: 30px;
+    }
+    &__text{
+        margin-bottom: 20px;
+        line-height: 1.6;
+        font-style: italic;
+        font-size: 18px;
+        padding-left: 34px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            background-image: url('../images/icons/bulet-icon.svg');
+            width: 20px;
+            height: 19px;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
 
 @import 'media';
