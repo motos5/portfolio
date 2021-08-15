@@ -44,6 +44,41 @@ body {
 	}
 }
 
+.form{
+	width: 100%;
+	padding: 20px;
+	line-height: 1.6;
+	&__input,
+	&__textarea{
+		display: block;
+		width: 100%;
+		padding: 10px 12px;
+		border: 2px solid $accent-color;
+		background-color: #fdfbf3;
+		margin-bottom: 10px;
+		color: $default-color;
+		&::placeholder{
+			opacity: 0.5;
+		}
+	}
+	&__textarea{
+		height: 200px;
+		resize: none;
+	}
+	&__button{
+		border: none;
+		background-color: $accent-color;
+		padding: 10px 30px;
+		color: $default-color;
+		cursor: pointer;
+		transition: all .3s;
+		&:hover{
+			background-color: $darking-hov;
+			color: #fff;
+		}
+	}
+}
+
 .circles-text{
 	@extend %title-1;
 }

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80">
+  <defs>
+    <style>
+      .b{fill:#333029}
+    </style>
+  </defs>
+  <circle cx="40" cy="40" r="40" fill="#ffe550"/>
+  <path d="M58.02 22.22H21.36l18.62 14.26 18.04-14.26z" class="b"/>
+  <path d="M41.59 42.33a2.56 2.56 0 01-1.64.6 3.2 3.2 0 01-1.83-.57L19.51 28.24v29.54h40.37v-30z" class="b"/>
+</svg>

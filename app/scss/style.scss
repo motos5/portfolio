@@ -185,7 +185,7 @@
         padding-left: 34px;
         position: relative;
         &::before{
-            content: '';
+            content: '\2715';
             position: absolute;
             background-image: url('../images/icons/bulet-icon.svg');
             width: 20px;
@@ -214,6 +214,12 @@
     }
     &__item{
         min-height: 300px;
+        @extend %title-4;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         &.color1{
             background-color:rosybrown;
         }
@@ -228,6 +234,7 @@
         }
         &.color5{
             background-color:plum;
+            color: $default-color;
         }
         &.color6{
             background-color:peru;
@@ -268,5 +275,64 @@
     }
 }
 
+.contacts{
+    background-color: $bg-darking;
+    padding: 30px 0;
+    &__inner{
+        display: flex;
+    }
+    &__title{
+        @extend %title-2;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    &__socials{
+        width: 100%;
+        flex: 0 0 50%;
+    }
+    &__socials-items{
+        display: flex;
+        flex-wrap: wrap;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    &__socials-item{
+        width: 150px;
+        height: 150px;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: all .3s;
+        &:hover{
+            background-color: $darking-hov;
+        }
+    }
+    &__socials-link{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    &__form{
+        width: 100%;
+    }
+}
+
+.footer{
+    color: #ffffff;
+	background-color: #333029;
+    padding: 55px 0;
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
 
 @import 'media';
