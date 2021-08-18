@@ -15,27 +15,46 @@
 			<div class="container">
 				<div class="header__inner">
 					<div class="header__top">
+						<a class="menu-btn" href="#">
+							<img class="menu-btn__img" src="images/icons/button-menu.svg" alt="Меню сайта">
+						</a>
 						<nav class="menu">
 							<ul class="menu__list">
-								<li class="menu__item"><a class="menu__link" href="#">Обо мне</a></li>
-								<li class="menu__item"><a class="menu__link" href="#">Услуги</a></li>
-								<li class="menu__item"><a class="menu__link" href="#">Портфолио</a></li>
-								<li class="menu__item"><a class="menu__link" href="#">Навыки</a></li>
-								<li class="menu__item"><a class="menu__link" href="#">Контакты</a></li>
+								<li class="menu__item"><a class="menu__link" href="#about">Обо мне</a></li>
+								<li class="menu__item"><a class="menu__link" href="#services">Услуги</a></li>
+								<li class="menu__item"><a class="menu__link" href="#portfolio">Портфолио</a></li>
+								<li class="menu__item"><a class="menu__link" href="#advantages">Преимущества</a></li>
+								<li class="menu__item"><a class="menu__link" href="#contacts">Контакты</a></li>
 							</ul>
+							<div class="menu__mobilebox">
+								<div class="menu__mobile">
+									<ul class="menu__mobile-list">
+										<li class="menu__mobile-item"><a class="menu__mobile-link" href="#about">Обо мне</a></li>
+										<li class="menu__mobile-item"><a class="menu__mobile-link" href="#services">Услуги</a></li>
+										<li class="menu__mobile-item"><a class="menu__mobile-link" href="#portfolio">Портфолио</a></li>
+										<li class="menu__mobile-item"><a class="menu__mobile-link" href="#advantages">Преимущества</a></li>
+										<li class="menu__mobile-item"><a class="menu__mobile-link" href="#contacts">Контакты</a></li>
+									</ul>
+								</div>
+								<div class="menu__mobile-bg"></div>
+							</div>
 						</nav>
+
 						<div class="social">
 							<ul class="social__list">
-								<li class="social__item"><a class="social__link" href="#">
-										<img class="social__img" src="images/icons/facebook.svg" alt="facebook">
+								<li class="social__item">
+									<a class="social__link" href="https://www.facebook.com/vitaliy.izotov" title="Посетите мою страницу в Facebook" target="_blank">
+										<img class="social__img" src="images/icons/facebook.svg" alt="Мой Facebook">
 									</a>
 								</li>
-									<li class="social__item"><a class="social__link" href="#">
-										<img class="social__img" src="images/icons/instagram.svg" alt="instagram">
+								<li class="social__item">
+									<a class="social__link" href="https://www.instagram.com/izotov_vitalii/" title="Посетите мою страницу в Instagram" target="_blank">
+										<img class="social__img" src="images/icons/instagram.svg" alt="Мой Instagram">
 									</a>
 								</li>
-									<li class="social__item"><a class="social__link" href="#">
-										<img class="social__img" src="images/icons/vk.svg" alt="vkontakte">
+								<li class="social__item">
+									<a class="social__link" href="https://vk.com/vitaliy.izotov" title="Посетите мою страницу в ВКонтакте" target="_blank">
+										<img class="social__img" src="images/icons/vk.svg" alt="Мой Vkontakte">
 									</a>
 								</li>
 							</ul>
@@ -43,7 +62,7 @@
 					</div>
 					<div class="header-content">
 						<p class="header-content__greeting">Меня зов​​ут <span>Вита​лий</span></p>
-						<h1 class="header-content__title">​Я начинающий веб-разработчик.</h1>
+						<h1 class="header-content__title">​Я начинающий веб-разработчик</h1>
 					</div>
 					<div class="header-offers">
 						<p class="header-offers__item">Создаю уника​льные сайты с чистым кодом (не на конструкторе​​)</p>
@@ -76,7 +95,7 @@
 			</div>
 		</section>
 
-		<section class="about">
+		<section class="about" id="about">
 			<div class="container">
 				<div class="about__inner">
 					<div class="about__photo"></div>
@@ -107,7 +126,7 @@
 			</div>
 		</section>
 
-		<section class="services">
+		<section class="services" id="services">
 			<div class="services__image left"></div>
 			<div class="services__content">
 				<h4 class="services__title">Услуги по вёрстке</h4>
@@ -130,7 +149,7 @@
 			</div>
 		</section>
 
-		<section class="portfolio">
+		<section class="portfolio" id="portfolio">
 			<div class="container">
 				<h2 class="portfolio__title">Портфолио</h2>
 				<div class="portfolio__items">
@@ -144,7 +163,7 @@
 			</div>
 		</section>
 
-		<section class="choose">
+		<section class="choose" id="advantages">
 			<div class="container">
 				<div class="choose__inner">
 					<div class="choose__info">
@@ -166,36 +185,32 @@
 			</div>
 		</section>
 
-		<section class="contacts">
+		<section class="contacts" id="contacts">
 			<div class="container">
 				<div class="contacts__inner">
 					<div class="contacts__socials">
-						<h2 class="contacts__title">Связаться со мной</h2>
+						<h4 class="contacts__title contacts__title--left">Связаться со мной</h4>
 						<div class="contacts__socials-items">
 							<div class="contacts__socials-item">
 								<img class="contacts__socials-icon" src="images/icons/facebook-icon.svg" alt="Мой Facebook">
-								<a class="contacts__socials-link" href="#">
-								</a>
+								<a class="contacts__socials-link" href="https://www.facebook.com/vitaliy.izotov" title="Посетите мою страницу в Facebook" target="_blank"></a>
 							</div>
 							<div class="contacts__socials-item">
 								<img class="contacts__socials-icon" src="images/icons/instagram-icon.svg" alt="Мой Instagram">
-								<a class="contacts__socials-link" href="#">
-								</a>
+								<a class="contacts__socials-link" href="https://www.instagram.com/izotov_vitalii/" title="Посетите мою страницу в Instagram" target="_blank"></a>
 							</div>
 							<div class="contacts__socials-item">
 								<img class="contacts__socials-icon" src="images/icons/vkontakte-icon.svg" alt="Мой Vkontakte">
-								<a class="contacts__socials-link" href="#">
-								</a>
+								<a class="contacts__socials-link" href="https://vk.com/vitaliy.izotov" title="Посетите мою страницу в ВКонтакте" target="_blank"></a>
 							</div>
 							<div class="contacts__socials-item">
 								<img class="contacts__socials-icon" src="images/icons/email-icon.svg" alt="Мой E-mail">
-								<a class="contacts__socials-link" href="#">
-								</a>
+								<a class="contacts__socials-link" href="mailto:allmarket198@gmail.com"></a>
 							</div>
 						</div>
 					</div>
 					<div class="contacts__form">
-						<h2 class="contacts__title">Напишите своё соощение</h2>
+						<h4 class="contacts__title">Напишите своё соощение</h4>
 						<form class="form" action="#">
 							<input class="form__input" type="text" placeholder="Введите Ваше имя" required>
 							<input class="form__input" type="email" placeholder="Введите Ваше сообщение" required>
@@ -213,16 +228,19 @@
 					<p class="footer__copy">&copy; 2021 WEB-Developer | Изотов Виталий</p>
 					<div class="social">
 						<ul class="social__list">
-							<li class="social__item"><a class="social__link" href="#">
-									<img class="social__img" src="images/icons/facebook.svg" alt="facebook">
+							<li class="social__item">
+								<a class="social__link" href="https://www.facebook.com/vitaliy.izotov" title="Посетите мою страницу в Facebook" target="_blank">
+									<img class="social__img" src="images/icons/facebook.svg" alt="Мой Facebook">
 								</a>
 							</li>
-								<li class="social__item"><a class="social__link" href="#">
-									<img class="social__img" src="images/icons/instagram.svg" alt="instagram">
+							<li class="social__item">
+								<a class="social__link" href="https://www.instagram.com/izotov_vitalii/" title="Посетите мою страницу в Instagram" target="_blank">
+									<img class="social__img" src="images/icons/instagram.svg" alt="Мой Instagram">
 								</a>
 							</li>
-								<li class="social__item"><a class="social__link" href="#">
-									<img class="social__img" src="images/icons/vk.svg" alt="vkontakte">
+							<li class="social__item">
+								<a class="social__link" href="https://vk.com/vitaliy.izotov" title="Посетите мою страницу в ВКонтакте" target="_blank">
+									<img class="social__img" src="images/icons/vk.svg" alt="Мой Vkontakte">
 								</a>
 							</li>
 						</ul>
@@ -231,7 +249,6 @@
 			</div>
 		</footer>
 
-		<script src="js/circles.min.js"></script>
 		<script src="js/main.min.js"></script>
 	</body>
 </html>

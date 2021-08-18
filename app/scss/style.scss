@@ -20,6 +20,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-top: 30px;
     }
 }
 
@@ -70,6 +71,7 @@
 
 .skills{
     background-color: #fff;
+    padding-bottom: 30px;
     &__items{
         display: flex;
         justify-content: space-around;
@@ -102,6 +104,7 @@
 
 .about{
     background-color: $bg-dark;
+    padding: 30px 0;
     &__inner{
         display: flex;
         column-gap: 30px;
@@ -116,7 +119,6 @@
     }
     &__content{
         flex: 0 0 50%;
-        padding: 30px 0;
     }
     &__title{
         @extend %title-2;
@@ -185,7 +187,7 @@
         padding-left: 34px;
         position: relative;
         &::before{
-            content: '\2715';
+            content: '';
             position: absolute;
             background-image: url('../images/icons/bulet-icon.svg');
             width: 20px;
@@ -220,6 +222,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        padding: 30px 20px;
         &.color1{
             background-color:rosybrown;
         }
@@ -282,7 +285,7 @@
         display: flex;
     }
     &__title{
-        @extend %title-2;
+        @extend %title-4;
         color: #fff;
         text-align: center;
         margin-bottom: 50px;

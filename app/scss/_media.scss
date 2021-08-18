@@ -1,0 +1,289 @@
+@media (max-width: 1400px){
+    .menu{
+        margin: initial;
+    }
+}
+
+@media (max-width: 1200px){
+    .services{
+        // height: fit-content;
+        &__image{
+            width: 300px;
+        }
+        &__content{
+            padding: 30px 20px 0;
+        }
+        &__text{
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 1100px){
+    .skills{
+        padding: 30px 0 10px;
+        &__items{
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__item{
+            min-width: 330px;
+            max-width: 330px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    .about{
+        &__inner{
+            display: block;
+        }
+        &__photo{
+            min-height: 400px;
+            background-size: contain;
+        }
+        &__title{
+            text-align: center;
+        }
+    }
+
+    .services{
+        display: block;
+        &__image{
+            display: none;
+        }
+        &__content{
+            padding: 30px 20px 30px;
+        }
+        &__title{
+            text-align: center;
+        }
+    }
+
+    .choose{
+        &__inner{
+            display: block;
+        }
+        &__info{
+            width: 100%;
+        }
+    }
+
+    .contacts{
+        &__inner{
+            display: block;
+        }
+        &__title{
+            margin-bottom: 20px;
+        }
+        &__socials{
+            margin-bottom: 40px;
+        }
+        .form{
+            max-width: 560px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: 960px){
+    .header{
+        .social{
+            &__item{
+                margin-left: 0;
+                margin: 0 7px;
+            }
+        }
+    }
+
+    .menu{
+        &__list{
+            display: none;
+        }
+    }
+
+    .menu-btn{
+        display: block;
+    }
+
+    .skills{
+        &__item{
+            padding: 40px 15px;
+            height: fit-content;
+        }
+    }
+
+    .portfolio{
+        &__items{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 740px){
+    .skills{
+        &__items{
+            display: block;
+        }
+        &__item{
+            margin: 0 auto 20px;
+        }
+        &__img{
+            display: none;
+        }
+    }
+
+    .about{
+        &__keys{
+            display: block;
+        }
+        &__keys-item{
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 680px){
+    %title-1{
+        font-size: 42px;
+    }
+
+    %title-2{
+        font-size: 32px;
+    }
+
+    %title-4{
+        font-size: 18px;
+    }
+
+    .header-offers{
+        max-width: 420px;
+        margin: 0 auto;
+        &__item{
+            font-size: 16px;
+        }
+    }
+
+    .about{
+        &__photo{
+            display: none;
+        }
+    }
+
+    .portfolio{
+        &__item{
+            line-height: 1.6;
+        }
+    }
+
+    .choose{
+        &__imagebox{
+            display: none;
+        }
+        &__title{
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 560px){
+    .header{
+        &__top{
+            margin-bottom: 50px;
+        }
+    }
+    
+    .header-content{
+        margin: 0 auto;
+        margin-bottom: 50px;
+        &__title{
+            &::before{
+                display: none;
+            }
+        }
+    }
+
+    .portfolio{
+        &__items{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &__item{
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    }
+
+    .footer{
+        &__inner{
+            display: block;
+            text-align: center;
+        }
+        &__copy{
+            margin-bottom: 20px;
+        }
+        .social{
+            display: inline-block;
+            margin: 0 auto;
+            &__item{
+                margin-left: 0;
+                margin: 0 7px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px){
+    %title-1{
+        font-size: 38px;
+    }
+
+    %title-2{
+        font-size: 28px;
+    }
+
+    %title-4{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 400px){
+    %title-1{
+        font-size: 30px;
+    }
+
+    %title-2{
+        font-size: 22px;
+    }
+
+    .menu{
+        &__mobile{
+            width: 100%;
+        }
+    }
+
+    .social{
+        margin-bottom: 20px;
+        &__item{
+            margin: 0 8px;
+        }
+    }
+    .header{
+        &__top{
+            flex-direction: column;
+        }
+    }
+
+    .header-content{
+        text-align: center;
+    }
+
+    .menu-btn{
+        margin-right: 0;
+    }
+
+    .skills{
+        &__item{
+            min-width: fit-content;
+        }
+    }
+}

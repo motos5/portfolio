@@ -24,6 +24,7 @@ function styles() {
 function scripts() {
 	return src([
 		'node_modules/jquery/dist/jquery.js',
+		'app/js/circles.min.js',
 		'app/js/main.js',
 	])
 		.pipe(uglify())
