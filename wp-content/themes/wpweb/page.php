@@ -9,6 +9,7 @@
 
 <?php
     get_template_part('template-parts/content','about');
+    get_template_part('template-parts/content','services');
 ?>
 
 <?php get_footer();
