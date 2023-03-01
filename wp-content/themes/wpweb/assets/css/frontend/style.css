@@ -479,6 +479,7 @@ ul.services__item-list {
 .works__slider-dots .slick-active button {
     background-color: #0077AA;
 }
+/* End Works Slider */
 
 .works__btn {
     font-size: 20px;
@@ -488,4 +489,106 @@ ul.services__item-list {
 	text-align: center;
 	width: 200px;
     position: relative;
+}
+/* End Works */
+
+/* Footer */
+.footer {
+    padding: 66px 0 120px;
+    background-color: #1E1C1C;
+}
+
+.footer__left-title,
+.footer__right-title {
+    color: #FAF7F7;
+}
+
+.footer__inner {
+    display: flex;
+}
+
+.footer__left {
+    width: 50%;
+    padding-left: 10px;
+    margin-right: 120px;
+}
+
+.footer__left-title {
+    margin-bottom: 17px;
+}
+
+.footer__left-text {
+    font-size: 20px;
+    line-height: 24px;
+    color: #FAF7F7;
+    margin-bottom: 58px;
+}
+
+/* Form */
+.form__input,
+.form__textarea {
+    display: block;
+    border: 1px solid #CBCBCB;
+    background-color: #EDEDED;
+    padding: 20px;
+    width: 480px;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.form__textarea {
+    min-height: 200px;
+	resize: none;
+    margin-bottom: 60px;
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+    font-size: 18px;
+    line-height: 22px;
+    color: #B5B5B5
+}
+/* End Form */
+
+.footer__right-title {
+    margin-bottom: 44px;
+}
+
+/* Socials */
+.socials__list {
+    display: flex;
+    margin-bottom: 44px;
+}
+
+.socials__item + .socials__item {
+    margin-left: 25px;
+}
+
+.socials__link path{
+    transition: fill .3s;
+}
+
+.socials__link:hover path {
+    fill: #0077AA;
+}
+/* End Socials */
+
+.email__lable {
+    font-size: 24px;
+    line-height: 29px;
+    display: inline-block;
+    color: #FAF7F7;
+    margin-right: 25px;
+}
+
+.email__link {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FAF7F7;
+    transition: color .3s;
+}
+
+.email__link:hover {
+    color: #0077AA;
 }
