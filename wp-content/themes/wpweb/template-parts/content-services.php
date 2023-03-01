@@ -7,7 +7,7 @@
         <img class="services__inner-bg" src="<?php  echo get_template_directory_uri() ?>/assets/img/service-bg.svg" alt="">
             <div class="services__list">
                 <div class="services__item">
-                    <h3 class="services__item-title">Website layout</h3>
+                    <h4 class="services__item-title">Website layout</h4>
                     <ul class="services__item-list">
                         <li class="services__item-variant">
                             Crossbrowser compatibility
@@ -27,7 +27,7 @@
                     </ul>
                 </div>
                 <div class="services__item">
-                    <h3 class="services__item-title">WordPress Development</h3>
+                    <h4 class="services__item-title">WordPress Development</h4>
                     <ul class="services__item-list">
                         <li class="services__item-variant">
                             Designing Themes and Plugins
@@ -47,7 +47,7 @@
                     </ul>
                 </div>
                 <div class="services__item">
-                    <h3 class="services__item-title">Additional services</h3>
+                    <h4 class="services__item-title">Additional services</h4>
                     <ul class="services__item-list">
                         <li class="services__item-variant">
                             Article writing

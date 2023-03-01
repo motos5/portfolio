@@ -52,8 +52,14 @@ add_action( 'after_setup_theme', 'wpweb_setup' );
 function wpweb_scripts() {
 	wp_enqueue_style( 'wpweb-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'wpweb-googlefonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+	wp_enqueue_style( 'wpweb-slick', get_template_directory_uri() . '/assets/css/frontend/slick.css', array(), _S_VERSION );
 	wp_enqueue_style( 'wpweb-style-main', get_template_directory_uri() . '/assets/css/frontend/style.css', array(), _S_VERSION );
 
+	// Подключение собственного файла jquery
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), _S_VERSION, true);
+	wp_enqueue_script( 'jquery');
+	wp_enqueue_script( 'wpweb-slickjs', get_template_directory_uri() . '/assets/js/frontend/slick.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'wpweb-mainjs', get_template_directory_uri() . '/assets/js/frontend/main.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

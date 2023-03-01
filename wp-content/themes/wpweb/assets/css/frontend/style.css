@@ -78,13 +78,15 @@ body {
     font-weight: 700;
     font-size: 32px;
     line-height: 38px;
-    text-transform: uppercase;
 }
 
 .btn {
     display: inline-block;
     font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
     color: #FAF7F7;
+    text-align: center;
     border: none;
     background-color: #0077AA;
     box-shadow: 0px 4px 7px rgba(0, 72, 103, 0.5);
@@ -274,6 +276,7 @@ body {
 
 .about__title {
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .about__text {
@@ -381,4 +384,108 @@ ul.services__item-list {
     font-weight: 500;
     font-size: 18px;
     line-height: 180%;
+}
+/* End Services */
+
+/* Works */
+.works {
+    padding: 64px 0 140px;
+    background-color: #FAF7F7;
+}
+
+.works__title {
+    margin: 0 0 60px 10px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.works__title::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 38px;
+    width: 315px;
+    height: 2px;
+    background-color: #0077AA;
+}
+
+.works__list-box {
+    position: relative;
+}
+
+.works__inner-bg {
+    position: absolute;
+    top: 196px;
+    left: 48px;
+}
+
+.works__item {
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 3px rgba(89, 200, 120, 0.1);
+    border-radius: 30px;
+    padding: 38px;
+    width: 455px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.works__item-img {
+    box-shadow: 0px 0px 4px rgba(0, 119, 170, 0.25);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 25px;
+}
+
+.works__item-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 90px;
+}
+
+.works__btn {
+    padding: 15px 62px 16px;
+}
+
+/* Works Slider */
+.works__list {
+    margin: 0 60px;
+}
+
+.works__list .slick-track {
+    display: flex;
+    column-gap: 36px;
+}
+
+.works__slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0;
+    line-height: 0;
+    margin-top: 40px;
+}
+
+.works__slider-dots button {
+    background: none;
+    border: none;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0, 119, 170, 0.5);
+    border-radius: 50%;
+}
+
+.works__slider-dots .slick-active button {
+    background-color: #0077AA;
+}
+
+.works__btn {
+    font-size: 20px;
+    line-height: 24px;
+	margin: 40px auto 0;
+	display: block;
+	text-align: center;
+	width: 200px;
+    position: relative;
 }
