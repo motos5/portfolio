@@ -8,9 +8,9 @@
 <?php } ?>
 
 <?php
-    get_template_part('template-parts/content','about');
-    get_template_part('template-parts/content','services');
-    get_template_part('template-parts/content','works');
+    // get_template_part('template-parts/content','about');
+    // get_template_part('template-parts/content','services');
+    // get_template_part('template-parts/content','works');
 ?>
 
 <?php get_footer();
