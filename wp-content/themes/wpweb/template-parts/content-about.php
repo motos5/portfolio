@@ -1,4 +1,4 @@
-<section class="about">
+<section class="about" id="about">
     <div class="container">
         <div class="about__inner">
             <img class="about__inner-bg" src="<?php  echo get_template_directory_uri() ?>/assets/img/about-bg.svg" alt="">

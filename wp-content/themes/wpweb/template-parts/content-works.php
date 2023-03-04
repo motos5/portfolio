@@ -1,4 +1,4 @@
-<section class="works">
+<section class="works" id="works">
     <div class="container">
         <h2 class="title works__title">List of works</h2>
         <div class="works__list-box">

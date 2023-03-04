@@ -57,6 +57,7 @@ function wpweb_scripts() {
 	wp_enqueue_style( 'wpweb-style-main', get_template_directory_uri() . '/assets/css/frontend/style.css', array(), _S_VERSION );
 
 	// Scripts
+	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'wpweb-slickjs', get_template_directory_uri() . '/assets/js/frontend/slick.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'wpweb-mainjs', get_template_directory_uri() . '/assets/js/frontend/main.js', array(), _S_VERSION, true );
 
