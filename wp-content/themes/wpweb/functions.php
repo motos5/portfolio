@@ -125,3 +125,8 @@ function wpweb_customize_register($wp_customize) {
 
 }
 add_action( 'customize_register', 'wpweb_customize_register' );
+
+
+
+// ACF Options
+require_once get_template_directory() . '/includes/options_acf.php';

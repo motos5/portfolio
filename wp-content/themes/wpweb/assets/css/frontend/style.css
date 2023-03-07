@@ -612,8 +612,7 @@ ul.services__item-list {
 
 /* Form */
 .footer__form {
-    width: 480px;
-    max-width: 100%;
+    width: 100%;
 }
 
 .form__input,
@@ -623,21 +622,35 @@ ul.services__item-list {
     background-color: #EDEDED;
     padding: 20px;
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .form__textarea {
     min-height: 200px;
 	resize: none;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .form__input::placeholder,
 .form__textarea::placeholder {
     font-size: 18px;
     line-height: 22px;
-    color: #B5B5B5
+    color: #B5B5B5;
 }
+
+/* Contact Form 7 Styles */
+.footer .wpcf7-form {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    max-width: 100%;
+}
+
+.footer .wpcf7-response-output {
+    color: #B5B5B5;
+    order: -1;
+}
+/* End Contact Form 7 Styles */
 /* End Form */
 
 .footer__right-title {
@@ -700,7 +713,7 @@ ul.services__item-list {
     max-width: 100%;
     margin: 0 auto;
     background-color: #1E1C1C;
-    padding: 70px 20px;
+    padding: 50px 20px;
     position: relative;
     overflow: hidden;
 }
@@ -722,6 +735,53 @@ ul.services__item-list {
 
 .popup__content-title {
     color: #FAF7F7;
+}
+
+
+
+ 
+
+.popup__talk .popup__content .wpcf7-response-output {
+    position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin: 0;
+	background-color: #1E1C1C;
+	padding: 130px 10px;
+	text-align: center;
+	transform: translateY(-50%);
+	width: 350px;
+	margin: 0 auto;
+	color: #fff;
+    
+}
+
+.popup__talk .popup__content .wpcf7-response-output.active {
+    -webkit-animation-name: popup;
+    animation-name: popup;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; 
+}
+
+
+@keyframes popup {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+        transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+        }
+    60% {
+    opacity: 1;
+    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    }
 }
 /* End PopUp */
 
@@ -955,7 +1015,7 @@ ul.services__item-list {
         width: 100%;
     }
 
-    .footer__form {
+    .footer .wpcf7-form {
         margin: 0 auto;
     }
 
@@ -971,7 +1031,7 @@ ul.services__item-list {
     /* PopUp */
     .popup__content {
         width: 620px;
-        height: 640px;
+        height: 670px;
     }
 
     .form__input {
@@ -1048,17 +1108,22 @@ ul.services__item-list {
         padding: 40px 20px;
     }
 
+    .popup__content-top {
+        margin-bottom: 30px;
+    }
+
     .popup__content-title {
         font-size: 28px;
         line-height: 32px;
     }
 
-    .form__input {
-        padding: 14px;
+    .popup__content .form__input {
+        margin-bottom: 0px;
     }
 
-    .form__textarea {
+    .popup__content .form__textarea {
         min-height: 130px;
+        margin-bottom: 20px;
     }
 }
 
@@ -1177,9 +1242,12 @@ ul.services__item-list {
     .popup__content {
         width: 450px;
         height: 500px;
-        padding: 30px 20px;
+        padding: 20px;
     }
 
+    .popup__content .form__input {
+        padding: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1334,12 +1402,17 @@ ul.services__item-list {
         line-height: 24px;
     }
 
-    .form__input {
-        padding: 10px;
+    .popup__content .form__input {
+        padding: 8px;
     }
 
-    .form__textarea {
+    .popup__content .form__textarea {
         min-height: 100px;
-        margin-bottom: 24px;
+        margin-bottom: 0;
+    }
+
+    .popup__talk .popup__content .wpcf7-response-output {
+        width: 270px;
+        padding: 100px 10px;
     }
 }

@@ -119,4 +119,8 @@ jQuery(document).ready(function($){
         event.preventDefault();
         $('.popup__talk').removeClass('popup--active');
     });
+
+    $('.popup__content-form .form__button').on('click', function(event) {
+        $('.popup__talk .popup__content .wpcf7-response-output').addClass('active');
+    });
 });
