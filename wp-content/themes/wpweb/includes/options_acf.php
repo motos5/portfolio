@@ -15,47 +15,7 @@ function wpweb_acf_init() {
             'menu_title'	=> esc_html__('Header Settings', 'o-marketing'),
             'parent_slug'	=> 'theme-general-settings',
         ));
-        acf_add_options_sub_page(array(
-            'page_title' 	=> esc_html__('About Settings', 'o-marketing'),
-            'menu_title'	=> esc_html__('About Settings', 'o-marketing'),
-            'parent_slug'	=> 'theme-general-settings',
-        ));
-        acf_add_options_sub_page(array(
-            'page_title' 	=> esc_html__('Expertise Settings', 'o-marketing'),
-            'menu_title'	=> esc_html__('Expertise Settings', 'o-marketing'),
-            'parent_slug'	=> 'theme-general-settings',
-        ));
-        acf_add_options_sub_page(array(
-            'page_title' 	=> esc_html__('Magic Settings', 'o-marketing'),
-            'menu_title'	=> esc_html__('Magic Settings', 'o-marketing'),
-            'parent_slug'	=> 'theme-general-settings',
-        ));
-        acf_add_options_sub_page(array(
-            'page_title' 	=> esc_html__('Portfolio Settings', 'o-marketing'),
-            'menu_title'	=> esc_html__('Portfolio Settings', 'o-marketing'),
-            'parent_slug'	=> 'theme-general-settings',
-        ));
-        acf_add_options_sub_page(array(
-            'page_title' 	=> esc_html__('Team Settings', 'o-marketing'),
-            'menu_title'	=> esc_html__('Team Settings', 'o-marketing'),
-            'parent_slug'	=> 'theme-general-settings',
-        ));
-        acf_add_options_sub_page(array(
-            'page_title' 	=> esc_html__('Pricing Settings', 'o-marketing'),
-            'menu_title'	=> esc_html__('Pricing Settings', 'o-marketing'),
-            'parent_slug'	=> 'theme-general-settings',
-        ));
-        acf_add_options_sub_page(array(
-            'page_title' 	=> esc_html__('Clients Settings', 'o-marketing'),
-            'menu_title'	=> esc_html__('Clients Settings', 'o-marketing'),
-            'parent_slug'	=> 'theme-general-settings',
-        ));
-        acf_add_options_sub_page(array(
-            'page_title' 	=> esc_html__('Contact Settings', 'o-marketing'),
-            'menu_title'	=> esc_html__('Contact Settings', 'o-marketing'),
-            'parent_slug'	=> 'theme-general-settings',
-        ));
-    */
+        */
     }
 }
 add_action('acf/init', 'wpweb_acf_init');
