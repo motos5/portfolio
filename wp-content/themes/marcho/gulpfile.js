@@ -3,6 +3,7 @@ const scss = require('gulp-sass')(require('sass')); //  Конвертация �
 const concat = require('gulp-concat');  //  Переименовывает и объединяет файлы в один
 const autoprefixer = require('gulp-autoprefixer');  //  Добавляет вендорные префиксы в CSS
 const uglify = require('gulp-uglify-es').default; //  Минифицирует JS айлы
+const imagemin = require('gulp-imagemin');
 const clean = require('gulp-clean');
 // const browserSync = require('browser-sync').create();
 
@@ -28,6 +29,21 @@ function scripts() {
 		.pipe(uglify())
 		.pipe(dest('assets/js/frontend'));
 		// .pipe(browserSync.stream());
+}
+
+function images() {
+	return src('app/images/**/*.*')
+	.pipe(
+		imagemin([
+			imagemin.gifsicle({ interlaced: true }),
+			imagemin.mozjpeg({ quality: 75, progressive: true }),
+			imagemin.optipng({ optimizationLevel: 5 }),
+			imagemin.svgo({
+				plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+			}),
+		])
+	)
+	.pipe(dest('assets/img'));
 }
 
 function watching() {
@@ -62,9 +78,10 @@ function browsersync() {
 
 exports.styles = styles;
 exports.scripts = scripts;
+exports.images = images;
 // exports.browsersync = browsersync;
 exports.watching = watching;
 
 
-exports.build = series(cleanDist, build);
+exports.build = series(cleanDist, images, build);
 exports.default = parallel(styles, scripts, watching);

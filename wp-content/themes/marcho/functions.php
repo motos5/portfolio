@@ -3,10 +3,10 @@ if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
 }
-/*
-function o_marketing_setup() {
+
+function marcho_setup() {
 	
-	load_theme_textdomain( 'wawe', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'marcho', get_template_directory() . '/languages' );
 
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
@@ -26,7 +26,7 @@ function o_marketing_setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'o_marketing_custom_background_args',
+			'marcho_custom_background_args',
 			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -46,22 +46,24 @@ function o_marketing_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'o_marketing_setup' );
+add_action( 'after_setup_theme', 'marcho_setup' );
 
 // Register Scripts and Stiles
-function o_marketing_scripts() {
-	wp_enqueue_style( 'wawe-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style( 'wawe-googlefonts', 'https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Montserrat:wght@500;700&family=Open+Sans:wght@300;400&family=Raleway:wght@700&display=swap');
-	wp_enqueue_style( 'style-name', get_template_directory_uri() . '/assets/css/frontend/style.css', array(), _S_VERSION );
+function marcho_scripts() {
+	// Stiles
+	wp_enqueue_style( 'marcho-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'marcho-style-main', get_template_directory_uri() . '/assets/css/frontend/style.min.css', array(), _S_VERSION );
 
-	wp_enqueue_script( 'wawe-mainjs', get_template_directory_uri() . '/assets/js/frontend/main.js', array(), _S_VERSION, true );
+	// Scripts
+	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'marcho-style-main', get_template_directory_uri() . '/assets/js/frontend/main.min.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'o_marketing_scripts' );
-
+add_action( 'wp_enqueue_scripts', 'marcho_scripts' );
+/*
 // ================= MENU ============== //
 // Register menu location
 function o_marketing_menus() {
