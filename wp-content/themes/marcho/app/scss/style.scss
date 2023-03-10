@@ -13,6 +13,7 @@
     }
 }
 
+// Menu
 .menu {
     &__list {
         display: flex;
@@ -60,6 +61,110 @@
         text-align: center;
         line-height: 20px;
     }
+}
+
+.footer {
+    background-color: $background;
+}
+
+.footer-top {
+    padding: 70px 0 40px;
+    border-bottom: 1px solid #ececec;
+    display: flex;
+    &__item.footer-top__item-contact {
+        width: 250px;
+        margin-right: 50px;
+    }
+    &__item.footer-top__item-nav {
+        width: 170px;
+        margin-right: 30px;
+    }
+    &__item.footer-top__item-form {
+        width: 470px;
+        max-width: 100%;
+    }
+    &__logo {
+        margin-bottom: 33px;
+        display: block;
+    }
+    &__address,
+    &__email,
+    &__phone {
+        display: block;
+        margin-bottom: 10px;
+    }
+    &__social-list {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+    }
+    &__social-item + .footer-top__social-item {
+        margin-left: 18px;
+    }
+    &__social-link {
+        path {
+            fill: $default;
+            transition: fill .3s;
+        }
+        &:hover {
+            path {
+                fill: $accent;
+            }
+        }
+    }
+    &__title {
+        @extend %roboto-500;
+        font-size: 22px;
+        line-height: 1;
+        color: $title;
+        margin-bottom: 46px;
+    }
+    &__link {
+        display: block;
+        margin-bottom: 10px;
+    }
+    &__text {
+        margin-bottom: 30px;
+    }
+    &__form-input {
+        border: none;
+        width: 320px;
+        max-width: 100%;
+        padding: 12px 16px;
+        background-color: white;
+        box-shadow: 0 7px 20px rgba(192, 192, 192, 0.3);
+        &::placeholder {
+            color: $default;
+        }
+    }
+    &__form-btn {
+        @extend %roboto-400;
+        border: none;
+        line-height: 36px;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: #fe3e57;
+        box-shadow: 0 7px 20px rgba(255, 17, 48, 0.3);
+        padding: 7px 28px;
+        cursor: pointer;
+    }
+}
+
+.footer-bottom {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    line-height: 34px;
+    &__accept {
+        display: flex;
+    }
+    &__accept-img {
+        display: inline-block;
+        margin-left: 25px;
+    }
+
 }
 
 
