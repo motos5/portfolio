@@ -4,6 +4,7 @@
 .vscode
 *.sublime*
 npm-debug.*
+package-lock.json
 /*
 !wp-content/
 
