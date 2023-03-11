@@ -52,10 +52,12 @@ add_action( 'after_setup_theme', 'marcho_setup' );
 function marcho_scripts() {
 	// Stiles
 	wp_enqueue_style( 'marcho-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'marcho-fancybox-css', get_template_directory_uri() . '/assets/css/frontend/jquery.fancybox.min.css', array(), _S_VERSION );
 	wp_enqueue_style( 'marcho-style-main', get_template_directory_uri() . '/assets/css/frontend/style.min.css', array(), _S_VERSION );
 
 	// Scripts
 	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'marcho-fancybox-js', get_template_directory_uri() . '/assets/js/frontend/jquery.fancybox.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'marcho-style-main', get_template_directory_uri() . '/assets/js/frontend/main.min.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
