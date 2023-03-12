@@ -6,6 +6,7 @@
 		get_template_part('template-parts/content','top-slider');
 		get_template_part('template-parts/content','categories-info');
 		get_template_part('template-parts/content','fashion-video');
+		get_template_part('template-parts/content','product');
 	?>
 	<?php endwhile; else: ?>
 		<p><?php echo esc_html__('Content not found.', 'wawe_setup'); ?></p>
