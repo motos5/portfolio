@@ -2,7 +2,7 @@
     <div class="container">
         <div class="promo__inner">
             <p class="promo__subtitle">Style Fashion</p>
-            <h3 class="title promo__title">Deal of the day</h3>
+            <h2 class="title promo__title">Deal of the day</h2>
             <div class="timer promo__timer" id="clockdiv" data-time="2023-05-01">
                 <div class="timer__item">
                     <span class="days"></span>

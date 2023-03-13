@@ -512,6 +512,96 @@
     }
 }
 
+.blog {
+    padding-top: 50px;
+    padding-bottom: 160px;
+    background-color: #fff;
+    background-image: url('../../img/decore/blog-bg.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: top 186px center;
+    &__title {
+        margin-bottom: 30px;
+    }
+    &__text {
+        margin-bottom: 60px;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 30px;
+    }
+    &__item {
+        width: 372px;
+        max-width: 100%;
+        background-color: #fff;
+        border: 1px solid #ececec;
+        box-shadow: 20px 0 60px rgba(202, 202, 202, 0);
+        transition: box-shadow .3s;
+    }
+    &__item:hover {
+        box-shadow: 20px 0 60px rgba(202, 202, 202, 0.35);
+        .blog__item-link {
+            color: $accent;
+            path {
+                fill: $accent;
+            }
+        }
+    }
+    &__item-img-link img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    &__item-info-box {
+        padding: 22px 40px;
+    }
+    &__item-info {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__item-author,
+    &__item-data {
+        padding-left: 30px;
+        position: relative;
+        line-height: 20px;
+    }
+    &__item-author::before,
+    &__item-data::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: 0 0;
+    }
+    &__item-author::before {
+        background-image: url('../../img/icons/user-grey.svg');
+    }
+    &__item-data::before {
+        background-image: url('../../img/icons/date-grey.svg');
+    }
+    &__item-title {
+        color: $title;
+        @extend %roboto-400;
+        font-size: 22px;
+        line-height: 32px;
+        margin-bottom: 13px;
+    }
+    &__item-link {
+        transition: color .3s;
+        path {
+            transition: fill .3s;
+        }
+    }
+    
+}
+
 
 .footer {
     background-color: $background;
