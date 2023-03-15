@@ -45,3 +45,47 @@ a {
     max-width: 100%;
     margin: 0 auto;
 }
+
+.breadcrumbs {
+    display: inline-flex;
+    justify-content: center;
+    padding-left: 25px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background-image: url('../../img/icons/home_icon.svg');
+        top: 6px;
+        left: 0;
+    }
+    &__list {
+        display: flex;
+    }
+    &__item {
+        color: #727272;
+        padding-right: 40px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 9px;
+            height: 10px;
+            background-image: url('../../img/icons/angle_right.svg');
+            top: 9px;
+            right: 15px;
+
+        }
+        &:last-child {
+            color: $accent;
+            padding-right: 0;
+            &::after {
+                content: none;
+            }
+        }
+    }
+    &__link {
+        color: inherit;
+    }
+}
