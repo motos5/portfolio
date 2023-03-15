@@ -10,7 +10,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="header">
+<header class="header <?php if(is_404()) { echo 'header--page-404'; } else { echo esc_attr(''); } ?>">
 	<div class="container">
 		<div class="header__inner">
 			<a class="logo" href="#">
