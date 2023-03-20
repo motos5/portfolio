@@ -42,3 +42,11 @@ $background: #f6f6f6;
     padding: 15px 40px;
     cursor: pointer;
 }
+
+%checkbox-hidden {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    position: absolute;
+}

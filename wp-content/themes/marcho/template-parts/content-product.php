@@ -5,7 +5,6 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodmoe tempor incididunt ut labore et dolore aliqua.
         </p>
         <div class="product__items">
-
             <div class="product-item">
                 <div class="product-item__img-box">
                     <img class="product-item__images" src="<?php echo get_template_directory_uri() ?>/app/images/product/1.jpg" alt="Product">
@@ -27,13 +26,23 @@
                         </a>
                     </div>
                 </div>
-                <div class="star">
-                    <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
-                </div>
-                <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-                <div class="product-item__prices">
-                    <div class="product-item__new-price">$34.00</div>
-                    <div class="product-item__old-price">$27.00</div>
+                <div class="product-item__info-box">
+                    <div class="product-item__info">
+                        <div class="star">
+                            <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
+                        </div>
+                        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+                        <div class="product-item__prices">
+                            <div class="product-item__new-price">$34.00</div>
+                            <div class="product-item__old-price">$27.00</div>
+                        </div>
+                    </div>
+                    <div class="product-item__content-box">
+                        <p class="product-item__text">
+                            Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod  utlitoi labore et dolore magna aliqua.
+                        </p>
+                        <button class="product-item__btn">Add to cart</button>
+                    </div>
                 </div>
             </div>
             <div class="product-item product-item--sale">
@@ -57,13 +66,23 @@
                         </a>
                     </div>
                 </div>
-                <div class="star">
-                    <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
-                </div>
-                <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-                <div class="product-item__prices">
-                    <div class="product-item__new-price">$34.00</div>
-                    <div class="product-item__old-price">$27.00</div>
+                <div class="product-item__info-box">
+                    <div class="product-item__info">
+                        <div class="star">
+                            <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
+                        </div>
+                        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+                        <div class="product-item__prices">
+                            <div class="product-item__new-price">$34.00</div>
+                            <div class="product-item__old-price">$27.00</div>
+                        </div>
+                    </div>
+                    <div class="product-item__content-box">
+                        <p class="product-item__text">
+                            Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod  utlitoi labore et dolore magna aliqua.
+                        </p>
+                        <button class="product-item__btn">Add to cart</button>
+                    </div>
                 </div>
             </div>
             <div class="product-item">
@@ -87,13 +106,23 @@
                         </a>
                     </div>
                 </div>
-                <div class="star">
-                    <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
-                </div>
-                <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-                <div class="product-item__prices">
-                    <div class="product-item__new-price">$34.00</div>
-                    <div class="product-item__old-price">$27.00</div>
+                <div class="product-item__info-box">
+                    <div class="product-item__info">
+                        <div class="star">
+                            <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
+                        </div>
+                        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+                        <div class="product-item__prices">
+                            <div class="product-item__new-price">$34.00</div>
+                            <div class="product-item__old-price">$27.00</div>
+                        </div>
+                    </div>
+                    <div class="product-item__content-box">
+                        <p class="product-item__text">
+                            Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod  utlitoi labore et dolore magna aliqua.
+                        </p>
+                        <button class="product-item__btn">Add to cart</button>
+                    </div>
                 </div>
             </div>
             <div class="product-item product-item--sale">
@@ -117,13 +146,23 @@
                         </a>
                     </div>
                 </div>
-                <div class="star">
-                    <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
-                </div>
-                <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-                <div class="product-item__prices">
-                    <div class="product-item__new-price">$34.00</div>
-                    <div class="product-item__old-price">$27.00</div>
+                <div class="product-item__info-box">
+                    <div class="product-item__info">
+                        <div class="star">
+                            <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
+                        </div>
+                        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+                        <div class="product-item__prices">
+                            <div class="product-item__new-price">$34.00</div>
+                            <div class="product-item__old-price">$27.00</div>
+                        </div>
+                    </div>
+                    <div class="product-item__content-box">
+                        <p class="product-item__text">
+                            Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod  utlitoi labore et dolore magna aliqua.
+                        </p>
+                        <button class="product-item__btn">Add to cart</button>
+                    </div>
                 </div>
             </div>
             <div class="product-item">
@@ -147,13 +186,23 @@
                         </a>
                     </div>
                 </div>
-                <div class="star">
-                    <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
-                </div>
-                <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-                <div class="product-item__prices">
-                    <div class="product-item__new-price">$34.00</div>
-                    <div class="product-item__old-price">$27.00</div>
+                <div class="product-item__info-box">
+                    <div class="product-item__info">
+                        <div class="star">
+                            <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
+                        </div>
+                        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+                        <div class="product-item__prices">
+                            <div class="product-item__new-price">$34.00</div>
+                            <div class="product-item__old-price">$27.00</div>
+                        </div>
+                    </div>
+                    <div class="product-item__content-box">
+                        <p class="product-item__text">
+                            Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod  utlitoi labore et dolore magna aliqua.
+                        </p>
+                        <button class="product-item__btn">Add to cart</button>
+                    </div>
                 </div>
             </div>
             <div class="product-item product-item--sale">
@@ -177,13 +226,23 @@
                         </a>
                     </div>
                 </div>
-                <div class="star">
-                    <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
-                </div>
-                <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-                <div class="product-item__prices">
-                    <div class="product-item__new-price">$34.00</div>
-                    <div class="product-item__old-price">$27.00</div>
+                <div class="product-item__info-box">
+                    <div class="product-item__info">
+                        <div class="star">
+                            <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
+                        </div>
+                        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+                        <div class="product-item__prices">
+                            <div class="product-item__new-price">$34.00</div>
+                            <div class="product-item__old-price">$27.00</div>
+                        </div>
+                    </div>
+                    <div class="product-item__content-box">
+                        <p class="product-item__text">
+                            Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod  utlitoi labore et dolore magna aliqua.
+                        </p>
+                        <button class="product-item__btn">Add to cart</button>
+                    </div>
                 </div>
             </div>
 

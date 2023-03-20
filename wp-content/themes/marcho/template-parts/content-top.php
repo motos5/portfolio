@@ -4,6 +4,8 @@ if( is_page_template('template-login.php') ) {
 	$top_text = 'Log in';
 } else if( is_page_template('template-register.php') ) {
     $top_text = 'Register';
+} else if( is_page_template('template-shop-catalog.php') ) {
+    $top_text = 'Shop page';
 }
 ?>
 <setion class="top">
@@ -13,7 +15,7 @@ if( is_page_template('template-login.php') ) {
             <div class="breadcrumbs">
                 <ul class="breadcrumbs__list">
                     <li class="breadcrumbs__item">
-                        <a class="breadcrumbs__link" href="#">Home</a>
+                        <a class="breadcrumbs__link" href="<?php echo esc_url(home_url("/")); ?>">Home</a>
                     </li>
                     <li class="breadcrumbs__item">
                         <span class="breadcrumbs__link"><?php printf(esc_html__('%1$s', 'marcho'), $top_text);  ?></span>
