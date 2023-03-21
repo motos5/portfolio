@@ -4,7 +4,15 @@
 @import 'libs';
 @import 'global';
 
-
+.header {
+    background-color: #3E1B38;
+    padding: 12px 0;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
 
 
 

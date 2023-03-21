@@ -52,6 +52,7 @@ add_action( 'after_setup_theme', 'elvinci_setup' );
 function elvinci_scripts() {
 	// Stiles
 	wp_enqueue_style( 'elvinci-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'elvinci-google-fonts', 'https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Poppins:wght@300;500;600;700&display=swap', array(), _S_VERSION );
 	wp_enqueue_style( 'elvinci-style-main', get_template_directory_uri() . '/assets/css/frontend/style.min.css', array(), _S_VERSION );
 
 	// Scripts
