@@ -33,7 +33,7 @@
             border-bottom: 1px solid $accent;
         }
     }
-    &__list-link.menu__list-link--active {
+    &__list-item.current-menu-item  .menu__list-link{
         color: $accent;
         font-weight: 700;
         border-bottom: 1px solid $accent;
@@ -1137,7 +1137,7 @@
     &__social-list {
         display: flex;
         align-items: center;
-        margin-top: 30px;
+        margin-top: 24px;
     }
     &__social-item + .footer-top__social-item {
         margin-left: 18px;

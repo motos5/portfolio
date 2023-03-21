@@ -6,6 +6,8 @@ if( is_page_template('template-login.php') ) {
     $top_text = 'Register';
 } else if( is_page_template('template-shop-catalog.php') ) {
     $top_text = 'Shop page';
+} else if( is_page_template('template-product.php') ) {
+    $top_text = 'Product';
 }
 ?>
 <setion class="top">
