@@ -15,7 +15,7 @@
 }
 
 .top-slider {
-    background-color: #F5F5F5;
+    background-color: #fff;
     min-height: 600px;
     height: 640px;
     background-image: url('../../img/top-slider-bg.png');
@@ -92,6 +92,114 @@
     }
     & .slick-next {
         right: 0;
+    }
+}
+
+.blog {
+    padding: 180px 0 64px;
+    background-color: #fff;
+    &__title {
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 56px;
+        margin-bottom: 40px;
+    }
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+    }
+    &__item {
+        width: 384px;
+        position: relative;
+        margin-bottom: 56px;
+    }
+    &__item-tag-link {
+        padding: 6px 10px;
+        background-color: #25AAD3;
+        border-radius: 4px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    &__item-tag {
+        font-size: 12px;
+        line-height: 13px;
+        text-align: center;
+        color: #fff;
+    }
+    &__item-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border-radius: 6px;
+    }
+    &__item-info {
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+    }
+    &__item-info-data,
+    &__item-info-author {
+        font-size: 12px;
+        line-height: 13px;
+        color: $post-text;
+    }
+    &__item-info-data-link {
+        padding-right: 10px;
+    }
+    &__item-info-author-link {
+        padding-left: 10px;
+    }
+    &__item-info-delimiter {
+        display: block;
+        height: 13px;
+        width: 1px;
+        background-color: rgba(58, 62, 88, 0.2);
+    }
+    &__item-title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 120%;
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 20px;
+        &::before {
+            content: '';
+            position: absolute;
+            height: 10px;
+            width: 13px;
+            top: 10px;
+            left: 0;
+            background-image: url('../../img/icons/rectangle.svg');
+        }
+    }
+    &__item-text {
+        line-height: 1.7;
+        color: $post-text;
+        margin-bottom: 20px;
+    }
+    &__item-link {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        line-height: 24px;
+        color: $link-black;
+        padding-right: 23px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            right: 0;
+            width: 15px;
+            height: 16px;
+            background-image: url('../../img/icons/link-arrow.svg');
+            background-repeat: no-repeat;
+        }
     }
 }
 
