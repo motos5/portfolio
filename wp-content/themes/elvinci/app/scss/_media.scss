@@ -1,7 +1,10 @@
 @media (max-width: 1240px) {
     .top-slider {
-        height: 900px;
+        height: 830px;
         background-size: 100% 690px;
+        &__title {
+            margin-bottom: 60px;
+        }
     }
     .slider {
         &__item {
@@ -15,10 +18,16 @@
             padding: 40px 0;
         }
         &__title {
-            margin-bottom: 24px;
+            margin-top: 24px;
         }
         & .slick-prev {
             left: 0;
+        }
+    }
+    .blog {
+        padding: 40px 0 70px;
+        &__inner {
+            justify-content: center;
         }
     }
 }
@@ -26,6 +35,7 @@
 @media (max-width: 960px) {
     .top-slider {
         background-size: cover;
+        height: 900px;
         &__title {
             margin-bottom: 30px;
             margin-top: 30px;
@@ -41,6 +51,22 @@
         }
         &__text {
             color: #fff;
+        }
+    }
+    .blog {
+        padding: 0 0 40px;
+        &__item {
+            margin-bottom: 40px;
+        }
+    }
+    .footer {
+        &__inner {
+            flex-wrap: wrap;
+        }
+        &__text {
+            width: 100%;
+            margin-bottom: 48px;
+            flex-grow: 1;
         }
     }
 }
@@ -82,38 +108,53 @@
             display: block;
         }
     }
-    .top-slider {
-        
-        &__title {
-            font-size: 42px;
-            line-height: 48px;
-        }
-    }
 }
 
 @media (max-width: 640px) {
     .top-slider {
         height: 840px;
-        &__title {
-            font-size: 38px;
-            line-height: 42px;
-        }
     }
 }
 
 @media (max-width: 480px) {
     .top-slider {
         height: 740px;
-        &__title {
-            font-size: 32px;
-            line-height: 36px;
-        }
     }
     .slider {
         &__title {
             margin-top: 24px;
             margin-bottom: 20px;
-            font-size: 16px;
+            &::before {
+                top: 5px;
+            }
+        }
+    }
+    .blog {
+        &__item-title {
+            &::before {
+                top: 5px;
+            }
+        }
+    }
+    .footer {
+        &__category-list {
+            width: 100%;
+            margin-bottom: 48px;
+        }
+        &__tag-list {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+        &__social {
+            display: flex;
+            align-items: center;
+        }
+        &__social-title {
+            margin-bottom: 0;
+            margin-right: 32px;
         }
     }
 }
