@@ -1,0 +1,119 @@
+@media (max-width: 1240px) {
+    .top-slider {
+        height: 900px;
+        background-size: 100% 690px;
+    }
+    .slider {
+        &__item {
+            display: block;
+        }
+        &__image {
+            margin-right: 0;
+            margin: 0 auto;
+        }
+        &__content {
+            padding: 40px 0;
+        }
+        &__title {
+            margin-bottom: 24px;
+        }
+        & .slick-prev {
+            left: 0;
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    .top-slider {
+        background-size: cover;
+        &__title {
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+    }
+    .slider {
+        &__content {
+            padding: 0;
+        }
+        &__title {
+            margin-top: 30px;
+            color: #fff;
+        }
+        &__text {
+            color: #fff;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    .logo {
+        width: 160px;
+        height: auto;
+    }
+    .menu {
+        ul.menu__list { 
+            padding: 70px 0 40px;
+            display: block;
+            background-color: #3E1B38;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            transform: translateY(-200%);
+            transition: transform .3s;
+            z-index: 5;
+        }
+        ul.menu__list.menu__list--active {
+            transform: translateY(0);
+        }
+        &__item + .menu__item {
+            margin-left: 0;
+        }
+        &__link {
+            padding: 15px 0;
+            display: block;
+        }
+        &__btn {
+            display: block;
+        }
+    }
+    .top-slider {
+        
+        &__title {
+            font-size: 42px;
+            line-height: 48px;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .top-slider {
+        height: 840px;
+        &__title {
+            font-size: 38px;
+            line-height: 42px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .top-slider {
+        height: 740px;
+        &__title {
+            font-size: 32px;
+            line-height: 36px;
+        }
+    }
+    .slider {
+        &__title {
+            margin-top: 24px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+    }
+}

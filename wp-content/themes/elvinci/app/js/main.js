@@ -16,5 +16,31 @@ jQuery(document).ready(function($){
     $(".slider").slick({
         prevArrow: leftArrow,
 		nextArrow: rightArrow,
+        responsive: [
+			{
+				breakpoint: 961,
+				settings: {
+					slidesToShow: 1,
+                    centerMode: true,
+                    centerPadding: '0px',
+                    arrows: false,
+				},
+			},
+		],
     });
+
+    // Hover Effect on TouchScreen
+    $(document).ready(function() {
+        $('.menu__link').on('touchstart touchend', function(e) {
+            e.preventDefault();
+            $(this).toggleClass('hover_effect');
+        });
+    });
+
+    // Menu button
+    function menuButton(event){
+        event.preventDefault();
+        $('.menu__list').toggleClass('menu__list--active');
+    }
+    $('.menu__btn, .menu a').on('click', menuButton);
 });
