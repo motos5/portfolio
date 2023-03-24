@@ -107,3 +107,10 @@ function elvinci_image_sizes( $sizes ){
 		'2048x2048',
 	] );
 }
+
+
+
+// ACF Options
+require_once get_template_directory() . '/includes/options_acf.php';
+// Limits Texts
+require_once get_template_directory() . '/includes/limits.php';
