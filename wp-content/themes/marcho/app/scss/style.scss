@@ -1105,8 +1105,7 @@
 }
 
 .product-page {
-    padding: 120px 0 60px;
-    border-bottom: 1px solid #f0f0f0;
+    padding: 120px 0 0;
     &__item-inner {
         display: flex;
     }
@@ -1454,6 +1453,8 @@
 }
 
 .commet-form {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 60px;
     &__title {
         @extend %roboto-400;
         color: $title;
@@ -1521,6 +1522,28 @@
         @extend %button;
         padding: 15px 36px;
         box-shadow: 0 7px 20px rgba(255, 17, 48, 0.3);
+    }
+}
+
+.related {
+    padding: 50px 0 120px;
+    &__title {
+        margin-bottom: 50px;
+    }
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 30px;
+        .product-item {
+            width: 270px;
+        }
+        .product-item__img-box {
+            height: auto;
+            margin-bottom: 18px;
+        }
+        .product-item__title {
+            margin-bottom: 8px;
+        }
     }
 }
 

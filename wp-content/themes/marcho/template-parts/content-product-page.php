@@ -291,3 +291,78 @@
         </div>
     </div>
 </section>
+<section class="related">
+    <div class="container">
+        <h3 class="title related__title">Related products</h3>
+        <div class="related__items">
+            <div class="product-item">
+                <div class="product-item__img-box">
+                    <img class="product-item__images" src="<?php echo get_template_directory_uri() ?>/app/images/product/1.jpg" alt="Product">
+                </div>
+                <div class="product-item__info-box">
+                    <div class="product-item__info">
+                        <div class="star">
+                            <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
+                        </div>
+                        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+                        <div class="product-item__prices">
+                            <div class="product-item__new-price">$34.00</div>
+                            <div class="product-item__old-price">$27.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item product-item--sale">
+                <div class="product-item__img-box">
+                    <img class="product-item__images" src="<?php echo get_template_directory_uri() ?>/app/images/product/2.jpg" alt="Product">
+                </div>
+                <div class="product-item__info-box">
+                    <div class="product-item__info">
+                        <div class="star">
+                            <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
+                        </div>
+                        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+                        <div class="product-item__prices">
+                            <div class="product-item__new-price">$34.00</div>
+                            <div class="product-item__old-price">$27.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-item__img-box">
+                    <img class="product-item__images" src="<?php echo get_template_directory_uri() ?>/app/images/product/3.jpg" alt="Product">
+                </div>
+                <div class="product-item__info-box">
+                    <div class="product-item__info">
+                        <div class="star">
+                            <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
+                        </div>
+                        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+                        <div class="product-item__prices">
+                            <div class="product-item__new-price">$34.00</div>
+                            <div class="product-item__old-price">$27.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item product-item--sale">
+                <div class="product-item__img-box">
+                    <img class="product-item__images" src="<?php echo get_template_directory_uri() ?>/app/images/product/4.jpg" alt="Product">
+                </div>
+                <div class="product-item__info-box">
+                    <div class="product-item__info">
+                        <div class="star">
+                            <img class="star__img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/rating.png" alt="Rating">
+                        </div>
+                        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+                        <div class="product-item__prices">
+                            <div class="product-item__new-price">$34.00</div>
+                            <div class="product-item__old-price">$27.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
