@@ -11,6 +11,10 @@ function wpweb_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'works-homepage', 390, 230, true );
+
+
+
 	add_theme_support(
 		'html5',
 		array(
@@ -33,7 +37,7 @@ function wpweb_setup() {
 			)
 		)
 	);
-	// add_theme_support( 'customize-selective-refresh-widgets' );
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	// Logotip
 	add_theme_support(
@@ -126,7 +130,21 @@ function wpweb_customize_register($wp_customize) {
 }
 add_action( 'customize_register', 'wpweb_customize_register' );
 
+// Удаляем размеры миниатюр изображений по умолчанию
+add_filter( 'intermediate_image_sizes', 'delete_intermediate_image_sizes' );
+function delete_intermediate_image_sizes( $sizes ){
+	// размеры которые нужно удалить
+	return array_diff( $sizes, [
+		'medium_large',
+		'large',
+		'1536x1536',
+		'2048x2048',
+	] );
+}
+
 
 
 // ACF Options
 require_once get_template_directory() . '/includes/options_acf.php';
+// Post Type
+require_once get_template_directory() . '/includes/post-types.php';

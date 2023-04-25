@@ -10,13 +10,26 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="header">
+<header class="header <?php if(is_404()) { echo 'header--page-404'; } else { echo esc_attr(''); } ?>">
 	<div class="container">
 		<div class="header__inner">
 			<a class="logo" href="#">
 				<img class="logo__img" src="<?php echo get_template_directory_uri() ?>/app/images/logo.svg" alt="Logo">
 			</a>
-			<nav class="menu">
+
+			<?php
+				wp_nav_menu( [
+					'theme_location'  => 'menu-header',
+					'container'       => 'nav',
+					'container_class' => 'menu',
+					'menu_class'      => 'menu__list',
+					'menu_id'         => false,
+					'echo'            => true,
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				] );
+			?>
+
+			<!-- <nav class="menu">
 				<ul class="menu__list">
 					<li class="menu__list-item">
 						<a class="menu__list-link menu__list-link--active" href="#">Home</a>
@@ -34,7 +47,7 @@
 						<a class="menu__list-link" href="#">Contact</a>
 					</li>
 				</ul>
-			</nav>
+			</nav> -->
 			<div class="user-nav">
 				<a class="user-nav__link" href="#">
 					<img class="user-nav__link-img" src="<?php echo get_template_directory_uri() ?>/app/images/icons/user.svg" alt="User icon">

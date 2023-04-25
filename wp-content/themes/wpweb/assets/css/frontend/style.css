@@ -526,7 +526,27 @@ ul.services__item-list {
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
-    margin-bottom: 90px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.works__item-status {
+	margin: 0 auto 30px;
+	width: 130px;
+	padding: 10px 10px;
+	color: #FAF7F7;
+	text-align: center;
+	border-radius: inherit;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.works__item-status.finished {
+    background-color: #00621B;
+}
+
+.works__item-status.developing {
+    background-color: #00648F;
 }
 
 .works__btn {
@@ -998,10 +1018,6 @@ ul.services__item-list {
         margin-right: 6px;
     }
 
-    .works__item-title {
-        margin-bottom: 70px;
-    }
-
     .footer__inner {
         flex-direction: column;
         align-items: center;
@@ -1349,6 +1365,10 @@ ul.services__item-list {
         line-height: 18px;
     }
     /* End Services */
+
+    .works__item-title {
+        margin-bottom: 24px;
+    }
 
     .footer__left-text {
         font-size: 18px;

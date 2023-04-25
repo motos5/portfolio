@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Assembly for working with the project WPWeb",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "ion-rangeslider": "^2.3.1"
+  },
   "devDependencies": {
     "browser-sync": "^2.28.3",
     "gulp": "^4.0.2",
@@ -13,7 +15,9 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^5.1.0",
     "gulp-uglify-es": "^3.0.0",
-    "sass": "^1.58.3"
+    "rateyo": "^2.3.2",
+    "sass": "^1.58.3",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
