@@ -1,10 +1,31 @@
 jQuery(document).ready(function($){
+    // Slider for Home
     $('.top-slider__inner').slick({
         dots: true,
         arrows: false,
         fade: true,
         autoplay: true,
         autoplaySpeed: 2000
+    });
+
+    // Slider for Blog
+    const url = wnm_custom['elvinci-style-main'];
+
+    const leftArrow = `<button type="button" class="slick-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9.62" height="15">
+                                <path d="M8.12 15a1.49 1.49 0 0 1-1.06-.44L0 7.5 7.06.44a1.5 1.5 0 0 1 2.12 2.12L4.24 7.5l4.94 4.94A1.5 1.5 0 0 1 8.12 15Z" />
+                            </svg>
+                        </button>`;
+    const rightArrow = `<button type="button" class="slick-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9.62" height="15">
+                                <path d="M1.5 15a1.49 1.49 0 0 0 1.06-.44L9.62 7.5 2.56.44A1.5 1.5 0 0 0 .44 2.56L5.38 7.5.44 12.44A1.5 1.5 0 0 0 1.5 15Z" />
+                            </svg>
+                        </button>`;
+
+    $('.blog-item__slider').slick({
+        prevArrow: leftArrow,
+		nextArrow: rightArrow,
+        infinite: false // Убираем бесконечную прокрутку слайдера
     });
 
     // RangeSlider
