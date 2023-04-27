@@ -11,7 +11,7 @@
 		get_template_part('template-parts/content','blog');
 	?>
 	<?php endwhile; else: ?>
-		<p><?php echo esc_html__('Content not found.', 'wawe_setup'); ?></p>
+		<p><?php echo esc_html__('Content not found.', 'marcho'); ?></p>
 	<?php endif; ?>
 </main>
 

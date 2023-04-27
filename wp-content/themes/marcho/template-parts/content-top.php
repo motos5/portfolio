@@ -10,6 +10,8 @@ if( is_page_template('template-login.php') ) {
     $top_text = 'Product';
 } else if(is_home()) {
     $top_text = 'Blog page';
+} else if(is_single()) {
+    $top_text = 'Blog details';
 }
 ?>
 <setion class="top">
