@@ -3,10 +3,10 @@ if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
 }
-/*
-function o_marketing_setup() {
+
+function wayup_setup() {
 	
-	load_theme_textdomain( 'wawe', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'wayup', get_template_directory() . '/languages' );
 
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
@@ -26,7 +26,7 @@ function o_marketing_setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'o_marketing_custom_background_args',
+			'wayup_custom_background_args',
 			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -46,32 +46,47 @@ function o_marketing_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'o_marketing_setup' );
+add_action( 'after_setup_theme', 'wayup_setup' );
 
 // Register Scripts and Stiles
-function o_marketing_scripts() {
-	wp_enqueue_style( 'wawe-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style( 'wawe-googlefonts', 'https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Montserrat:wght@500;700&family=Open+Sans:wght@300;400&family=Raleway:wght@700&display=swap');
-	wp_enqueue_style( 'style-name', get_template_directory_uri() . '/assets/css/frontend/style.css', array(), _S_VERSION );
+function wayup_scripts() {
+	// Styles
+	wp_enqueue_style( 'wayup-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'wayup-style-vendor', get_template_directory_uri() . '/assets/css/vendor.min.css', array(), _S_VERSION );
+	wp_enqueue_style( 'wayup-style-main', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION );
 
-	wp_enqueue_script( 'wawe-mainjs', get_template_directory_uri() . '/assets/js/frontend/main.js', array(), _S_VERSION, true );
+	// Scripts
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js');
+	wp_enqueue_script( 'jquery');
+	
+	wp_register_script( 'goodshare', 'https://cdn.jsdelivr.net/npm/goodshare.js@4/goodshare.min.js', array(), _S_VERSION, true);
+	wp_enqueue_script( 'wayup-js-vendor', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'wayup-js-svg', get_template_directory_uri() . '/assets/img/svg-sprite/svg-sprite.js', array(), _S_VERSION, false );
+	wp_enqueue_script( 'wayup-js-main', get_template_directory_uri() . '/assets/js/common.min.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'o_marketing_scripts' );
+add_action( 'wp_enqueue_scripts', 'wayup_scripts' );
+
+
+
+
 
 // ================= MENU ============== //
 // Register menu location
-function o_marketing_menus() {
+function wayup_menus() {
     $locations = array(
-        'menu-header' => esc_html__('Header navigation', 'o_marketing'),
+        'menu-header' => esc_html__('Header navigation', 'wayup'),
+        'menu-footer' => esc_html__('Footer navigation', 'wayup'),
     );
     register_nav_menus($locations);
 }
-add_action('init', 'o_marketing_menus');
+add_action('init', 'wayup_menus');
 
+/*
 // Add CSS class for menu HTML teg <li>
 function o_marketing_css_class_li($classes) {
 	$classes[] = 'menu__list-item';
@@ -87,3 +102,14 @@ function o_marketing_css_class_a($atts) {
 add_filter( 'nav_menu_link_attributes', 'o_marketing_css_class_a');
 // ================= END MENU ============== //'
 */
+
+// For body_class(); function CSS Styles
+function wayup_body_class( $classes ) {
+    if ( is_page_template('default') ) {
+        $classes[] = 'is-home';
+    } else {
+        $classes[] = 'inner-page';
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'wayup_body_class' );
