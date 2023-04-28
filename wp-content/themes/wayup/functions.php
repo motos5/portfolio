@@ -80,28 +80,14 @@ add_action( 'wp_enqueue_scripts', 'wayup_scripts' );
 function wayup_menus() {
     $locations = array(
         'menu-header' => esc_html__('Header navigation', 'wayup'),
-        'menu-footer' => esc_html__('Footer navigation', 'wayup'),
+        'menu-footer-1' => esc_html__('Footer navigation 1', 'wayup'),
+        'menu-footer-2' => esc_html__('Footer navigation 2', 'wayup'),
     );
     register_nav_menus($locations);
 }
 add_action('init', 'wayup_menus');
 
-/*
-// Add CSS class for menu HTML teg <li>
-function o_marketing_css_class_li($classes) {
-	$classes[] = 'menu__list-item';
-	return $classes;
-}
-add_filter('nav_menu_css_class', 'o_marketing_css_class_li', 10, 1);
 
-// Add CSS class for menu HTML teg <a>
-function o_marketing_css_class_a($atts) {
-	$atts['class'] = "menu__list-link";
-	return $atts;
-}
-add_filter( 'nav_menu_link_attributes', 'o_marketing_css_class_a');
-// ================= END MENU ============== //'
-*/
 
 // For body_class(); function CSS Styles
 function wayup_body_class( $classes ) {
@@ -113,3 +99,23 @@ function wayup_body_class( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'wayup_body_class' );
+
+
+/*================= ACF Options page in Admin Panel =============*/
+function wayup_acf_init() {
+    if( function_exists('acf_add_options_page') ) {
+        $option_page = acf_add_options_page(array(
+            'page_title' 	=> esc_html__('Theme Settings', 'wayup'),
+            'menu_title' 	=> esc_html__('Global Settings', 'wayup'),
+            'menu_slug' 	=> 'theme-general-settings',
+            'capability' 	=> 'edit_posts',
+            'redirect' 	=> false
+        ));
+        acf_add_options_sub_page(array(
+            'page_title' 	=> esc_html__('Footer Settings', 'wayup'),
+            'menu_title'	=> esc_html__('Footer Settings', 'wayup'),
+            'parent_slug'	=> 'theme-general-settings',
+        ));
+    }
+}
+add_action('acf/init', 'wayup_acf_init');

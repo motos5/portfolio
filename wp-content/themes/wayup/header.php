@@ -1,3 +1,12 @@
+<?php
+// Group Header Phones (Global Settings)
+$heeder_phones = get_field('heeder_phones', 'option');
+$phone_label = $heeder_phones['phone_label'];
+$phone = $heeder_phones['phone'];
+
+?>
+
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -32,37 +41,38 @@
 
 	<div class="heading">
 		<ul class="social">
-			<li class="social__item">
-				<span>Vk</span>
-				<a class="social__icon social__icon_vk" href="#">
-					<svg  width="21" height="18">
-						<use xlink:href="#vk"/>
-					</svg>
-				</a>
-			</li>
-			<li class="social__item">
-				<span>Fb</span>
-				<a class="social__icon social__icon_fb" href="#">
-					<svg  width="14" height="17">
-						<use xlink:href="#facebook"/>
-					</svg>
-				</a>
-			</li>
-			<li class="social__item">
-				<span>Tw</span>
-				<a class="social__icon social__icon_tw" href="#">
-					<svg  width="18" height="15">
-						<use xlink:href="#twitter"/>
-					</svg>
-				</a>
-			</li>
-			<li class="social__item">
-				<a class="social__icon social__icon_inst" href="#">
-					<svg   width="16" height="16">
-						<use xlink:href="#instagram"/>
-					</svg>
-				</a>
-			</li>
+
+			<?php
+				if ( have_rows('socials', 'option') ) {
+				while ( have_rows('socials', 'option') ) { the_row();
+					
+					$icon_social = '';
+					if(get_sub_field('header') == 'Fb') {
+						$icon_social = '<svg  width="21" height="18">
+											<use xlink:href="#facebook"/>
+										</svg>';
+					} else if(get_sub_field('header') == 'In') {
+						$icon_social = '<svg  width="21" height="18">
+											<use xlink:href="#instagram"/>
+										</svg>';
+					} else if(get_sub_field('header') == 'Tw') {
+						$icon_social = '<svg  width="21" height="18">
+											<use xlink:href="#twitter"/>
+										</svg>';
+					}
+					?>
+						<li class="social__item">
+							<span><?php echo $icon_social; ?></span>
+							<a class="social__icon " href="<?php the_sub_field('link'); ?>" target="_blank">
+								<?php echo $icon_social; ?>
+							</a>
+						</li>
+				
+				<?php }
+				}
+			?>
+
+			
 		</ul>
 		<div class="heading__block">
 			<a href="cart.html" class="heading__bag">
@@ -73,10 +83,10 @@
 			<div class="language">
 				<ul>
 					<li class="lang-item active">
-						<a href="#">Ru</a>
+						<a href="#">En</a>
 					</li>
 					<li class="lang-item">
-						<a href="#">En</a>
+						<a href="#">Uk</a>
 					</li>
 				</ul>
 			</div>
@@ -86,15 +96,15 @@
 				<svg class="control__icon" width="19" height="17">
 					<use xlink:href="#login"/>
 				</svg>
-				Вход
+				<?php echo esc_html__('Log in', 'wayup') ?>
 			</a>
 			<a style="display: none;" href="cabinet.html" class="control__enter control__enter_cab">
 				<svg class="control__icon" width="16" height="16">
 					<use xlink:href="#user"/>
 				</svg>
-				Личный кабинет
+				<?php echo esc_html__('Personal Area', 'wayup') ?>
 			</a>
-			<a href="#reg" class="control__reg noise popup-link-2">Регистрация</a>
+			<a href="#reg" class="control__reg noise popup-link-2"><?php echo esc_html__('Register', 'wayup') ?></a>
 		</div>
 	</div>
 
@@ -105,18 +115,19 @@
 		</div>
 
 		<div class="navigation__wrap">
-			<a href="#call" class="call popup-link-1">
-				<div class="call__icon btn">
-					<svg width="22" height="22">
-						<use xlink:href="#phone-solid"/>
-					</svg>
-				</div>
-				<div class="call__block">
-					<p class="call__text">Заказать звонок</p>
-					<p class="call__number">+ 7 (495) 567-28-15</p>
-				</div>
-			</a>
-			
+			<?php if($phone) { ?>
+				<a href="#call" class="call popup-link-1">
+					<div class="call__icon btn">
+						<svg width="22" height="22">
+							<use xlink:href="#phone-solid"/>
+						</svg>
+					</div>
+					<div class="call__block">
+						<p class="call__text"><?php printf(esc_html__('%1$s', 'wayup'), $phone_label); ?></p>
+						<p class="call__number"><?php printf(esc_html__('%1$s', 'wayup'), $phone); ?></p>
+					</div>
+				</a>
+			<?php } ?>
 			<!-- Main menu -->
 			<nav id="nav-wrap" class="menu">
 				
@@ -124,16 +135,16 @@
 				<a class="mobile-btn" href="#" title="<?php echo esc_attr__('Hide navigation', 'wayup'); ?>"><?php echo esc_html__('Hide navigation', 'wayup'); ?></a>
 
 				<?php
-						wp_nav_menu( [
-							'theme_location'  => 'menu-header',
-							'container'       => '',
-							'container_class' => '',
-							'menu_class'      => 'menu__list',
-							'menu_id'         => 'nav',
-							'echo'            => true,
-							'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-						] );
-					?>
+					wp_nav_menu( [
+						'theme_location'  => 'menu-header',
+						'container'       => '',
+						'container_class' => '',
+						'menu_class'      => 'menu__list',
+						'menu_id'         => 'nav',
+						'echo'            => true,
+						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					] );
+				?>
 
 			</nav><!-- End main menu -->
 			

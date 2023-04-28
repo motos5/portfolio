@@ -508,6 +508,7 @@ button {
   position: relative;
   height: 43px;
   line-height: 43px;
+  padding-top: 5px;
 }
 
 .heading .social__item:before {
@@ -547,6 +548,10 @@ button {
   height: 43px;
   background-color: #383838;
   margin-right: 60px;
+}
+
+.social__item span svg{
+  fill: #858585;
 }
 
 .social span,
@@ -2171,7 +2176,7 @@ button {
   position: relative;
 }
 
-.footer .guide li.active a {
+.footer .guide li.current-menu-item a {
   font-weight: 600;
   color: #fff;
 }
