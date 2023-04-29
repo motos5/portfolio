@@ -1393,6 +1393,14 @@
     }
 }
 
+.comments-title {
+    @extend %roboto-700;
+    font-size: 24px;
+    color: $title;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
 .comments {
     &__item {
         display: flex;
@@ -1780,6 +1788,151 @@
             background-image: url('../../img/icons/calendar.svg');
             background-repeat: no-repeat;
         }
+    }
+}
+
+.blog-one {
+    &__text {
+        border: 1px solid #ececec;
+        border-top: 0;
+        padding: 30px;
+        h4 {
+            @extend %roboto-500;
+            color: $title;
+            font-size: 22px;
+            margin: 25px 0;
+        }
+        p {
+            margin: 25px 0;
+        }
+        blockquote {
+            @extend %roboto-400;
+            font-size: 22px;
+            background-color: $background;
+            border-left: 3px solid $accent;
+            color: $title;
+            padding: 35px;
+            margin: 25px 0;
+        }
+    }
+    &__left-img {
+        float: left;
+        margin-right: 30px;
+        margin-bottom: 10px;
+    }
+    &__right-img {
+        float: right;
+        margin-left: 30px;
+        margin-bottom: 10px;
+    }
+    &__info {
+        display: flex;
+        margin-bottom: 25px;
+    }
+    &__info-link {
+        margin-right: 30px;
+        padding-left: 30px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 2px;
+        }
+    }
+    &__info-link--calendar::before {
+        background-image: url('../../img/icons/calendar.svg');
+        background-repeat: no-repeat;
+        top: 0;
+    }
+    &__info-link--comments::before {
+        background-image: url('../../img/icons/comments.svg');
+        background-repeat: no-repeat;
+    }
+    &__info-link--author::before {
+        background-image: url('../../img/icons/user-accent.svg');
+        background-repeat: no-repeat;
+    }
+    &__box {
+        margin: 25px 0 35px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__tags {
+        span {
+            @extend %roboto-500;
+            text-transform: uppercase;
+            color: $title;
+            margin-right: 5px;
+        }
+    }
+    &__share {
+        span {
+            @extend %roboto-500;
+            text-transform: uppercase;
+            color: $title;
+            margin-right: 5px;
+        }
+        a {
+            margin-right: 12px;
+            vertical-align: middle;
+            path {
+                fill: $default;
+                transition: fill .3s;
+            }
+            &:hover {
+                path {
+                    fill: $accent;
+                }
+            }
+        }
+    }
+    &__author {
+        border-bottom: 1px solid #ececec;
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+    }
+    &__author-img {
+        margin-right: 30px;
+        width: 140px;
+        height: auto;
+        object-fit: cover;
+    }
+    &__author-name {
+        @extend %roboto-500;
+        font-size: 22px;
+        color: $title;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+    &__author-text {
+        padding: 8px 0;
+        width: 100%;
+    }
+    &__form-title {
+        @extend %roboto-700;
+        color: $title;
+        text-transform: uppercase;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .comments__item p {
+        margin: 0 0 10px 0;
+    }
+    .comments__content-top {
+        margin-bottom: 4px;
+        & p {
+            margin-bottom: 0;
+            margin-right: 13px;
+        }
+    }
+    .commet-form {
+        padding-bottom: 0;
+        border-bottom: 0;
     }
 }
 
