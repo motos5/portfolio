@@ -4,6 +4,13 @@ $heeder_phones = get_field('heeder_phones', 'option');
 $phone_label = $heeder_phones['phone_label'];
 $phone = $heeder_phones['phone'];
 
+$header_background = get_field('header_background', 'option');
+
+$header_video = get_field('header_video', 'option');
+$link = $header_video['link'];
+$time = $header_video['time'];
+$description = $header_video['description'];
+
 ?>
 
 
@@ -29,7 +36,12 @@ $phone = $heeder_phones['phone'];
 
 	if(is_page_template('default')) {
 		$class_header = 'header-home';
-		$style_for_header = 'style="background: #fff url(' . get_template_directory_uri() . '/assets/img/bg.jpg) no-repeat center top/ cover;"';
+		$style_for_header = '';
+		if($header_background) {
+			$style_for_header = 'style="background: #fff url(' . esc_attr($header_background) . ') no-repeat center top/ cover;"';
+		} else {
+			$style_for_header = 'style="background: #fff url(' . get_template_directory_uri() . '/assets/img/bg.jpg) no-repeat center top/ cover;"';
+		}
 	} else {
 		$class_header = 'header-inner';
 		$style_for_header = '';
@@ -117,13 +129,15 @@ $phone = $heeder_phones['phone'];
 		<div class="navigation__wrap">
 			<?php if($phone) { ?>
 				<a href="#call" class="call popup-link-1">
-					<div class="call__icon btn">
+					<div class="call__icon">
 						<svg width="22" height="22">
 							<use xlink:href="#phone-solid"/>
 						</svg>
 					</div>
 					<div class="call__block">
-						<p class="call__text"><?php printf(esc_html__('%1$s', 'wayup'), $phone_label); ?></p>
+						<?php if($phone_label) { ?>
+							<p class="call__text"><?php printf(esc_html__('%1$s', 'wayup'), $phone_label); ?></p>
+						<?php } ?>
 						<p class="call__number"><?php printf(esc_html__('%1$s', 'wayup'), $phone); ?></p>
 					</div>
 				</a>
@@ -160,44 +174,38 @@ $phone = $heeder_phones['phone'];
 	<div class="offer">
 		<div class="wrapper">
 			<div class="offer__slider">
-				<div class="offer__slide">
-					<p class="offer__text">Вы хотите изменить мир.</p>
-					<h1 class="offer__title">Мы хотим вам помочь.</h1>
-					<p class="offer__descr">Мы современная Юридическая фирма,<br> помогающая перспективным стартапам, фрилансерам и малому бизнесу.</p>
-					<a href=contacts.html#callback" class="offer__btn btn popup-link">Бесплатная консультация</a>
-				</div>
-				<div class="offer__slide">
-					<p class="offer__text">Вы хотите изменить мир.</p>
-					<h1 class="offer__title">Мы хотим вам помочь.</h1>
-					<p class="offer__descr">Юристы JC проведут вас и вашу компанию через многочисленные юридические проблемы, стоящие перед компаниями Москвы сегодня.</p>
-					<a href="contacts.html#callback" class="offer__btn btn popup-link">Бесплатная консультация</a>
-				</div>
-				<div class="offer__slide">
-					<p class="offer__text">Вы хотите изменить мир.</p>
-					<h1 class="offer__title">Мы хотим вам помочь.</h1>
-					<p class="offer__descr">Мы предпочитаем обсуждать проблемы и решения, а не участвовать в теоретических юридических дебатах, которые никогда не заканчиваются.</p>
-					<a href="contacts.html#callback" class="offer__btn btn">Бесплатная консультация</a>
-				</div>
+			<?php
+				if ( have_rows('header_slider', 'option') ) {
+				while ( have_rows('header_slider', 'option') ) { the_row(); ?>	
+					<div class="offer__slide">
+						<p class="offer__text"><?php the_sub_field('text'); ?></p>
+						<h1 class="offer__title"><?php the_sub_field('title'); ?></h1>
+						<p class="offer__descr"><?php the_sub_field('description'); ?></p>
+						<a href=contacts.html#callback" class="offer__btn btn popup-link"><?php echo esc_html__('Free consultation', 'wayup'); ?></a>
+					</div>
+				<?php }
+				}
+			?>
 			</div>
 
-			<a class="offer__video popup-with-zoom-anim popup-youtube" href="https://www.youtube.com/watch?v=FWxRRbnwRf0" rel="nofollow" >
-				<p class="offer__time">1:30</p>
-				<div class="offer__play"></div>
-				<p class="offer__watch">Посмотрите короткое видео о нашей компании</p>
-			</a>
+			<?php if($link) { ?>
+				<a class="offer__video popup-with-zoom-anim popup-youtube" href="<?php echo esc_url($link); ?>" rel="nofollow" >
+					<?php if($time) { ?>
+						<p class="offer__time"><?php echo esc_html($time); ?></p>
+					<?php } ?>
+					<div class="offer__play"></div>
+					<?php if($description) { ?>
+						<p class="offer__watch"><?php printf(esc_html__('%1$s', 'wayup'), $description); ?></p>
+					<?php } ?>
+				</a>
+			<?php } ?>
 		</div>
 	</div>
 	<?php } else { ?>
 	<div class="caption">
 		<div class="wrapper">
-			<h1 class="caption__title">Page Title</h1>
-			<div class="caption__bc">
-				<span>
-					<a href="index.html">Home</a>
-				</span>
-				<span class="sep">/</span>
-				<span class="current">Page Title</span>
-			</div>
+			<h1 class="caption__title"><?php wp_title(''); ?></h1>
+			<?php echo wayup_breadcrumbs(); ?>
 		</div>
 	</div>
 	<?php } ?>

@@ -7,6 +7,7 @@ $section_2 = $footer_widget['section_2'];
 $section_3 = $footer_widget['section_3'];
 $section_4 = $footer_widget['section_4'];
 
+// Footer Contacts - (Global Settings)
 $footer_contacts = get_field('footer_contacts', 'option');
 $phone_1 = $footer_contacts['phone_1'];
 $phone_1_link = $footer_contacts['phone_1_link'];
@@ -14,8 +15,9 @@ $phone_2 = $footer_contacts['phone_2'];
 $phone_2_link = $footer_contacts['phone_2_link'];
 $phone_3 = $footer_contacts['phone_3'];
 $phone_3_link = $footer_contacts['phone_3_link'];
-$e_mail = $footer_contacts['e_mail'];
 $address = $footer_contacts['address'];
+$e_mail = $footer_contacts['e_mail'];
+
 
 $footer_info = get_field('footer_info', 'option');
 $footer_copyrights = get_field('footer_copyrights', 'option');
@@ -134,7 +136,7 @@ $footer_copyrights = get_field('footer_copyrights', 'option');
                         <svg width="25" height="19">
                             <use xlink:href="#mail"/>
                         </svg>
-                        <a class="contact__text contact__text_mail" href="mailto:<?php printf(esc_attr('%1$s', 'wayup'), $e_mail); ?>"><?php printf(esc_html__('%1$s', 'wayup'), $e_mail); ?></a>
+                        <a class="contact__text contact__text_mail" href="mailto:<?php // printf(esc_attr('%1$s', 'wayup'), $e_mail); ?>"><?php printf(esc_html__('%1$s', 'wayup'), $e_mail); ?></a>
                     </li>
                 <?php } ?>
             </ul>

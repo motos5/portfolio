@@ -311,31 +311,33 @@ button {
 
 .btn {
   cursor: pointer;
-  height: 50px;
-  background-image: -webkit-linear-gradient(left, #0cf 0%, #00a2ff 100%);
-  background-image: linear-gradient(to right, #0cf 0%, #00a2ff 100%);
+  height: auto;
+  width: 100%;
+  padding: 14px 50px;
+  border: 0;
   border-radius: 25px;
+  background-image: linear-gradient(-78deg, #00a2ff 0%, #0cf 100%);
   box-shadow: 0 5px 20px rgba(0, 163, 255, 0.6);
-  display: block;
+  display: inline-block;
   text-align: center;
-  line-height: 50px;
+  line-height: inherit;
   color: #fff;
   letter-spacing: .03em;
   font-size: 15px;
   font-weight: 600;
-  width: 250px;
   position: relative;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
-  border: none;
 }
+
 
 .btn:before {
   padding: 3px 0 0 1px;
   color: #26afff;
   content: '';
   display: block;
-  width: 262px;
+  width: calc(100% + 12px);
+  /* max-width: 327px; */
   height: 62px;
   border: 2px solid #26afff;
   border-radius: 30px;
@@ -975,9 +977,29 @@ button {
   fill: #fff;
 }
 
+.call__icon {
+  position: relative;
+}
+
 .call__icon:before {
   content: '';
+  position: absolute;
+  width: calc(100% + 12px);
+  height: 66px;
+  border: 2px solid #26afff;
+  border-radius: 50%;
+  top: -6px;
+  left: -6px;
+  opacity: 0;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
+
+.call__icon:hover:before {
+  opacity: 1;
+}
+
+
 
 .call__text {
   font-weight: 600;
@@ -987,6 +1009,8 @@ button {
 .call__number {
   white-space: nowrap;
 }
+
+
 
 .call .btn:before {
   width: 64px;
@@ -1042,9 +1066,7 @@ button {
   margin: 0 auto 50px;
 }
 
-.offer__btn:before {
-  content: 'Бесплатная консультация';
-}
+
 
 .offer__video {
   display: -webkit-box;
@@ -2491,6 +2513,8 @@ button {
   font-size: 13px;
 }
 
+
+
 .log__forget {
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
@@ -2544,7 +2568,7 @@ button {
 
 .log__line span {
   font-size: 23px;
-  color: #f33251;
+  color: #00cbff;
   display: block;
   margin: -5px 8px 0 0;
 }
@@ -4106,25 +4130,42 @@ button {
 }
 
 .clients .log {
-  padding-top: 47px;
   margin-bottom: 0;
 }
 
-.clients .log__wrap {
+.log__wrap.form {
   background-color: #fff;
   border-radius: 8px 5px 5px;
   box-shadow: 0 5px 20px rgba(206, 218, 228, 0.41);
+  padding: 33px 42px 45px 47px;
+  margin-top: 65px;
+}
+
+.clients .log__wrap {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 33px 42px 45px 47px;
 }
 
-.clients .log label:after {
-  display: block;
+.log__wrap.form label {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  position: relative;
 }
+
+.log__wrap.form label:after {
+  content: '*';
+  position: absolute;
+  top: -2px;
+  right: -10px;
+  color: #00cbff;
+  font-size: 18px;
+}
+
 
 .clients .log .btn {
   width: 170px;
@@ -4132,20 +4173,18 @@ button {
 
 .clients .log__btn {
   position: relative;
-  max-width: 182px;
-  margin: -15px -10px 0 auto;
+  margin: -15px 0 0 auto;
+  cursor: pointer;
 }
 
-.clients .log__btn:hover:before {
-  opacity: 1;
-}
+
 
 .clients .log__btn:before {
   padding-top: 3px;
   color: #26afff;
   content: '';
   display: block;
-  width: 182px;
+  width: calc(100% + 12px);
   height: 62px;
   border: 2px solid #26afff;
   border-radius: 30px;
@@ -4155,6 +4194,10 @@ button {
   opacity: 0;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+}
+
+.clients .log__btn:hover:before {
+  opacity: 1;
 }
 
 .clients .log__group {
@@ -4231,11 +4274,16 @@ button {
   content: '';
   width: 9px;
   height: 14px;
-  background: url(../img/arrow.png) no-repeat center;
+  background: url(../img/arrow.svg) no-repeat center;
   position: absolute;
   top: 50%;
   margin-top: -7px;
   left: 0;
+}
+
+.pagination .next.last:after,
+.pagination .prev.first:after {
+  background: url(../img/arrow-grey.svg) no-repeat center;
 }
 
 .pagination .next:hover,
