@@ -34,7 +34,7 @@ $description = $header_video['description'];
 	$class_header = '';
 	$style_for_header = '';
 
-	if(is_page_template('default')) {
+	if(is_front_page()) {
 		$class_header = 'header-home';
 		$style_for_header = '';
 		if($header_background) {
@@ -170,7 +170,7 @@ $description = $header_video['description'];
 
 	</div>
 
-	<?php if( is_page_template('default') ) { ?>
+	<?php if( is_front_page() ) { ?>
 	<div class="offer">
 		<div class="wrapper">
 			<div class="offer__slider">
@@ -204,7 +204,18 @@ $description = $header_video['description'];
 	<?php } else { ?>
 	<div class="caption">
 		<div class="wrapper">
-			<h1 class="caption__title"><?php wp_title(''); ?></h1>
+			<h1 class="caption__title">
+				<?php
+				if(is_single()) {
+					$current_post_type = get_post_type(get_the_ID());
+					$single_obj = get_post_type_object( $current_post_type );
+					echo $single_obj->labels->singular_name;
+				} else {
+					wp_title(''); 
+				}
+				
+				?>
+			</h1>
 			<?php echo wayup_breadcrumbs(); ?>
 		</div>
 	</div>

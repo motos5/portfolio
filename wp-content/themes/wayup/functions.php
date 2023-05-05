@@ -14,6 +14,8 @@ function wayup_setup() {
 
 	// Add Image Size
 	add_image_size( 'archive-testimonials', 225, 230, true );
+	add_image_size( 'single-services', 1170, 635, true );
+	add_image_size( 'archive-cases', 438, 455, true );
 
 	add_theme_support(
 		'html5',
@@ -107,6 +109,20 @@ function delete_intermediate_image_sizes( $sizes ){
 	] );
 }
 
+// Get Attachment Image Info
+function wayup_get_attachment( $attachment_id ) {
+
+	$attachment = get_post( $attachment_id );
+	return array(
+		'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+		'caption' => $attachment->post_excerpt,
+		'description' => $attachment->post_content,
+		'href' => get_permalink( $attachment->ID ),
+		'src' => $attachment->guid,
+		'title' => $attachment->post_title
+	);
+}
+
 
 // ================= MENU ============== //
 // Register menu location
@@ -127,7 +143,7 @@ add_action('init', 'wayup_menus');
 
 // For body_class(); function CSS Styles
 function wayup_body_class( $classes ) {
-    if ( is_page_template('default') ) {
+    if ( is_front_page() ) {
         $classes[] = 'is-home';
     } else {
         $classes[] = 'inner-page';
@@ -178,13 +194,13 @@ function wayup_metaboxes($meta_boxes) {
 			// Поля для Metaboxies
             array(
                 'name' => esc_html__('Social link', 'wayup'),
-                'desc' => esc_html__('Enter the link to the social network', 'wayup'),
+                'desc' => esc_html__('Enter the link to the social network.', 'wayup'),
                 'id'   => $prefix . 'testimonials_link',
                 'type' => 'text',
             ),
             array(
                 'name' => esc_html__('Data Post', 'wayup'),
-                'desc' => esc_html__('Select the desired date', 'wayup'),
+                'desc' => esc_html__('Select the desired date.', 'wayup'),
                 'id'   => $prefix . 'testimonials_date',
                 'type' => 'text_date',
             ),
@@ -202,19 +218,21 @@ function wayup_metaboxes($meta_boxes) {
         // 'show_on'    => array( 'key' => 'page-template', 'value' => array('page-home.php'), ), // Раскомментировать, если Metaboxes создаются для станицы - page
 
         'fields' => array(
-			// Поля для Metaboxies
+			
             array(
-                'name' => esc_html__('Social link', 'wayup'),
-                'desc' => esc_html__('Enter the link to the social network', 'wayup'),
-                'id'   => $prefix . 'services_link',
+                'name' => esc_html__('Price', 'wayup'),
+                'desc' => esc_html__('Enter the cost of this service as a number.', 'wayup'),
+                'id'   => $prefix . 'services_price',
                 'type' => 'text',
             ),
+			/*
             array(
                 'name' => esc_html__('Data Post', 'wayup'),
                 'desc' => esc_html__('Select the desired date', 'wayup'),
                 'id'   => $prefix . 'services_date',
                 'type' => 'text_date',
             ),
+			*/
         )
     );
 
@@ -228,7 +246,7 @@ function wayup_per_post_types( $query) {
 	if( is_post_type_archive('testimonials') ) {
 		$query->set('posts_per_page', 1);
 	} if ( is_admin() ) {
-		$query->set('posts_per_page', 10);
+		$query->set('posts_per_page', 20);
 	}
 }
 /* ============ End Settings for Posts Per Page ============ */
@@ -245,3 +263,5 @@ require_once __DIR__ . '/includes/post-types.php';
 require_once __DIR__ . '/includes/metaboxes.php';
 // Include AJAX Contact Form  Testimonials Archive Page
 require_once __DIR__ . '/includes/testimonials-contact-form.php';
+// Include AJAX Contact Form  for "template-order.php"
+require_once __DIR__ . '/includes/order-contact-form.php';
