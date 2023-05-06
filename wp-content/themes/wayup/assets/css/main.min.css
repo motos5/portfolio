@@ -1064,6 +1064,8 @@ button {
 
 .offer__btn {
   margin: 0 auto 50px;
+  width: 450px;
+  max-width: 100%;
 }
 
 
@@ -1434,7 +1436,7 @@ button {
   display: -ms-flexbox;
   display: flex;
   height: 53px;
-  width: 494px;
+  min-width: 494px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 5px 30px rgba(206, 218, 228, 0.6);
@@ -1821,7 +1823,7 @@ button {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 80px;
   width: 100%;
 }

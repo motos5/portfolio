@@ -60,7 +60,8 @@ get_header(); ?>
                         // Get Image from Single Post Type Services
                         $image_post_services = wayup_get_attachment(get_post_thumbnail_id($service_id));
                     ?>
-                    <img src="<?php echo esc_url($image_post_services['src']);  ?>" alt="<?php echo esc_url($image_post_services['alt']);  ?>">
+                    
+                    <?php echo get_the_post_thumbnail($service_id, 'single-services'); ?>
                     
                 </div>
                 <div class="inner__block">

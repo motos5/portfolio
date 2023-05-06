@@ -28,7 +28,9 @@ $services_price = get_post_meta(get_the_ID(), 'wayup_services_price', true);
                         // Get Attachment Image Info
                         $image_data = wayup_get_attachment(get_post_thumbnail_id(get_the_ID()));
                     ?>
-                    <p class="inner__short"><?php echo $image_data['description']; ?></p>
+                    <?php if($image_data['description']) { ?>
+                        <p class="inner__short"><?php echo $image_data['description']; ?></p>
+                    <?php } ?>
                     <?php if($services_price) { ?>
                         <span class="inner__price"><?php echo esc_html($main_currency); ?><?php printf(esc_html('%1$s', 'wayup'), $services_price); ?></span>
                     <?php } ?>
