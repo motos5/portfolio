@@ -210,6 +210,10 @@ $description = $header_video['description'];
 					$current_post_type = get_post_type(get_the_ID());
 					$single_obj = get_post_type_object( $current_post_type );
 					echo $single_obj->labels->singular_name;
+				} else if(is_category()) {
+					$current_post_type = get_post_type(get_the_ID());
+					$single_obj = get_post_type_object( $current_post_type );
+					echo $single_obj->labels->name;
 				} else {
 					wp_title(''); 
 				}

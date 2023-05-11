@@ -16,6 +16,8 @@ function wayup_setup() {
 	add_image_size( 'archive-testimonials', 225, 230, true );
 	add_image_size( 'single-services', 1170, 635, true );
 	add_image_size( 'archive-cases', 438, 455, true );
+	add_image_size( 'archive-news', 409, 266, true );
+	add_image_size( 'single-news', 1920, 740, true );
 
 	add_theme_support(
 		'html5',
@@ -97,6 +99,26 @@ function wayup_admin_scripts($hook) {
 }
 add_action( 'admin_enqueue_scripts', 'wayup_admin_scripts', 10 );
 
+
+// Truncate the Excerpt ================== //
+function wayup_excerpt($limit) {
+	$excerpt = explode(' ', get_the_excerpt(), $limit);
+
+	if (count($excerpt) >= $limit) {
+		array_pop($excerpt);
+		$excerpt = implode(" ", $excerpt) . '...';
+	} else {
+		$excerpt = implode(" ", $excerpt);
+	}
+
+	$excerpt = preg_replace('`\[[^\]]*\]`', '', $excerpt);
+
+	return $excerpt;
+}
+
+
+
+
 // Image Sizes Option
 add_filter( 'intermediate_image_sizes', 'delete_intermediate_image_sizes' );
 function delete_intermediate_image_sizes( $sizes ){
@@ -124,7 +146,6 @@ function wayup_get_attachment( $attachment_id ) {
 }
 
 
-// ================= MENU ============== //
 // Register menu location
 function wayup_menus() {
     $locations = array(
@@ -135,9 +156,6 @@ function wayup_menus() {
     register_nav_menus($locations);
 }
 add_action('init', 'wayup_menus');
-
-
-
 
 
 
@@ -153,24 +171,7 @@ function wayup_body_class( $classes ) {
 add_filter( 'body_class', 'wayup_body_class' );
 
 
-/*================= ACF Options page in Admin Panel =============*/
-function wayup_acf_init() {
-    if( function_exists('acf_add_options_page') ) {
-        $option_page = acf_add_options_page(array(
-            'page_title' 	=> esc_html__('Theme Settings', 'wayup'),
-            'menu_title' 	=> esc_html__('Global Settings', 'wayup'),
-            'menu_slug' 	=> 'theme-general-settings',
-            'capability' 	=> 'edit_posts',
-            'redirect' 	=> false
-        ));
-        acf_add_options_sub_page(array(
-            'page_title' 	=> esc_html__('Post Types Settings', 'wayup'),
-            'menu_title'	=> esc_html__('Post Types Settings', 'wayup'),
-            'parent_slug'	=> 'theme-general-settings',
-        ));
-    }
-}
-add_action('acf/init', 'wayup_acf_init');
+
 
 
 // Регистрация Metaboxies
@@ -248,7 +249,7 @@ function wayup_metaboxes($meta_boxes) {
 /* ============ Settings for Posts Per Page ============ */
 add_action( 'pre_get_posts', 'wayup_per_post_types');
 function wayup_per_post_types( $query) {
-	// Testimonials Page Settings
+	// Testimonials Archive Page Settings
 	if( is_post_type_archive('testimonials') ) {
 		$query->set('posts_per_page', 1);
 	} if ( is_admin() ) {
@@ -271,3 +272,7 @@ require_once __DIR__ . '/includes/metaboxes.php';
 require_once __DIR__ . '/includes/testimonials-contact-form.php';
 // Include AJAX Contact Form  for "template-order.php"
 require_once __DIR__ . '/includes/order-contact-form.php';
+// Include ACF Options File
+require_once __DIR__ . '/includes/acf-options.php';
+// Include Widgets
+require_once __DIR__ . '/includes/widgets.php';

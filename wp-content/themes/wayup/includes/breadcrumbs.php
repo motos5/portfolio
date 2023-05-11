@@ -39,6 +39,7 @@ function wayup_breadcrumbs() {
             echo sprintf($link, $home_link, $text['home']);
             if ($frontpage_id == 0 || $parent_id != $frontpage_id) echo $delimiter;
         }
+        
 
         if ( is_category() ) {
             $this_cat = get_category(get_query_var('cat'), false);

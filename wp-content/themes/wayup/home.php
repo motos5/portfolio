@@ -1,19 +1,27 @@
 <?php
-// Global $wp_query
-global $wp_query;
+// Group Post Types News (Post Types Settings)
+$news = get_field('news', 'option');
+$subtitle = $news['subtitle'];
+$title = $news['title'];
 
 get_header();
+?>
+
+<?php
+$news = new WP_Query( [
+	'post_type' => 'post',
+	'paged' => $paged
+] );
 ?>
 
 <!-- Service -->
 <section class="inner events">
     <div class="wrapper">
         <div class="news">
-            
-        
-            <h2 class="news__title secondary-title"><span><?php echo esc_html__('Category', 'wayup'); ?></span><br><?php single_term_title(); ?></h2>
-            
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <?php if($subtitle || $title) { ?>
+                <h2 class="news__title secondary-title"><span><?php printf(esc_html__('%1$s', 'wayup'), $subtitle); ?></span><br><?php printf(esc_html__('%1$s', 'wayup'), $title); ?></h2>
+            <?php } ?>
+            <?php if ( $news->have_posts() ) : while ( $news->have_posts() ) : $news->the_post(); ?>
                 <!-- One new -->
                 <article class="news__item">
                     <div class="news__wrap">
@@ -96,7 +104,7 @@ get_header();
 
 			<!-- Pagination -->
 		
-			<?php   if($wp_query->max_num_pages > 1) { ?>
+			<?php   if($news->max_num_pages > 1) { ?>
 				<nav class="pagination">
 					<div class="nav-links">
 								
@@ -116,17 +124,17 @@ get_header();
 									'current' => max( 1, get_query_var('paged') ),
 									'prev_text'    => '',
 									'next_text'    => '',
-									'total'	=> $wp_query->max_num_pages
+									'total'	=> $news->max_num_pages
 								)); ?>
 
 						<?php
 							// Right Arrow for last page
-							if(get_query_var('paged') == $wp_query->max_num_pages) { ?>
+							if(get_query_var('paged') == $news->max_num_pages) { ?>
 								<span class="next page-numbers last"></span>
 						<?php } ?>
 					</div>
 				</nav>
-			<?php }   ?>
+			<?php }  ?>
 
         </div>
 

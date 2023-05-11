@@ -74,24 +74,24 @@ get_header(); ?>
                         </div>
                     <?php } ?>
                     <form action="<?php echo admin_url('admin-ajax.php?action=order'); ?>" class="inner__form log order-form" id="popupOrder">
-                        <p class="log__title">Оформить заказ</p>
+                        <p class="log__title"><?php echo esc_html__('Checkout', 'wayup'); ?></p>
                         <!-- Field for Subject Message -->
                         <input type="hidden" name="subject" value="<?php echo esc_html($title); ?>" class="log__input">
                         <div class="log__group">
-                            <label>Имя</label>
+                            <label><?php echo esc_html__('Name', 'wayup'); ?></label>
                             <input type="text" name="name" class="log__input">
                         </div>
                         <div class="log__group">
-                            <label>Телефон</label>
+                            <label><?php echo esc_html__('Phone', 'wayup'); ?></label>
                             <input type="tel" name="tel" class="log__input">
                         </div>
                         <div class="log__group">
-                            <label>Email</label>
+                            <label><?php echo esc_html__('Email', 'wayup'); ?></label>
                             <input type="email" name="email" class="log__input">
                         </div>
-                        <p class="log__line"><span>*</span>Поля обязательные для заполнения</p>
+                        <p class="log__line"><span>*</span><?php echo esc_html__('Mandatory fields', 'wayup'); ?></p>
                         <div class="log__btn">
-                            <input id="order" type="submit" data-submit value="Заказать" class="btn"/>
+                            <input id="order" type="submit" data-submit value="<?php echo esc_attr__('Order', 'wayup'); ?>" class="btn"/>
                         </div>
                     </form>
                 </div>
