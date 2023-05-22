@@ -7,6 +7,8 @@ jQuery(document).ready(function($){
         slidesToShow: 2,
         slidesToScroll: 1,
         centerPadding: '50px',
+        autoplay: true,
+        autoplaySpeed: 2000,
         responsive: [
 			{
 				breakpoint: 769,

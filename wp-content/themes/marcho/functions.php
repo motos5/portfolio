@@ -52,40 +52,45 @@ add_action( 'after_setup_theme', 'marcho_setup' );
 function marcho_scripts() {
 	// Stiles
 	wp_enqueue_style( 'marcho-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'marcho-fancybox-css', get_template_directory_uri() . '/assets/css/frontend/jquery.fancybox.min.css', array(), _S_VERSION );
 	wp_enqueue_style( 'marcho-style-main', get_template_directory_uri() . '/assets/css/frontend/style.min.css', array(), _S_VERSION );
 
 	// Scripts
 	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'marcho-fancybox-js', get_template_directory_uri() . '/assets/js/frontend/jquery.fancybox.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'marcho-style-main', get_template_directory_uri() . '/assets/js/frontend/main.min.js', array(), _S_VERSION, true );
+
+	// Object for URL in JavaScript
+    $wnm_custom = array( 'marcho-style-main' => get_template_directory_uri());
+    wp_localize_script( 'marcho-style-main', 'wnm_custom', $wnm_custom );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'marcho_scripts' );
-/*
+
 // ================= MENU ============== //
 // Register menu location
-function o_marketing_menus() {
+function marcho_menus() {
     $locations = array(
-        'menu-header' => esc_html__('Header navigation', 'o_marketing'),
+        'menu-header' => esc_html__('Header navigation', 'marcho'),
     );
     register_nav_menus($locations);
 }
-add_action('init', 'o_marketing_menus');
+add_action('init', 'marcho_menus');
 
 // Add CSS class for menu HTML teg <li>
-function o_marketing_css_class_li($classes) {
+function marcho_css_class_li($classes) {
 	$classes[] = 'menu__list-item';
 	return $classes;
 }
-add_filter('nav_menu_css_class', 'o_marketing_css_class_li', 10, 1);
+add_filter('nav_menu_css_class', 'marcho_css_class_li', 10, 1);
 
 // Add CSS class for menu HTML teg <a>
-function o_marketing_css_class_a($atts) {
+function marcho_css_class_a($atts) {
 	$atts['class'] = "menu__list-link";
 	return $atts;
 }
-add_filter( 'nav_menu_link_attributes', 'o_marketing_css_class_a');
+add_filter( 'nav_menu_link_attributes', 'marcho_css_class_a');
 // ================= END MENU ============== //'
-*/
