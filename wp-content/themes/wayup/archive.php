@@ -10,8 +10,10 @@ get_header();
     <div class="wrapper">
         <div class="news">
             
-        
-            <h2 class="news__title secondary-title"><span><?php echo esc_html__('Category', 'wayup'); ?></span><br><?php single_term_title(); ?></h2>
+
+            <div class="archive__title">
+                <h2 class="secondary-title"><?php the_archive_title();?></h2>
+            </div>
             
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <!-- One new -->

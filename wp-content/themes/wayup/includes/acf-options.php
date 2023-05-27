@@ -25,11 +25,6 @@ function add_custom_block_categories($block_categories, $editor_context)
 		array_push(
 			$block_categories,
 			array(
-				'slug' => 'widgets-modules',
-				'title' => esc_html__('Widgets Module', 'wayup'),
-				'icon' => null,
-			),
-			array(
 				'slug' => 'page-modules',
 				'title' => esc_html__('Pages Module', 'wayup'),
 				'icon' => null,
@@ -42,44 +37,23 @@ add_filter('block_categories_all', 'add_custom_block_categories', 10, 2);
 
 function acf_init_block_types(){
 
-	//category-all-preview
+	// Contacts
 	acf_register_block_type(array(
-		'name' => 'category-all-preview',
-		'title' => __('Vorschau aller Berichte'),
-		'description' => __('Vorschau aller Berichte'),
-		'render_template' => 'template-parts/blocks/sonder/category-all-preview.php',
-		'category' => 'widgets-modules',
-		'mode' => 'edit',
-		'icon' => 'format-gallery',
-		'keywords' => array('category, preview'),
-		'post_types' => array('page'),
-		'example' => array(
-			'attributes' => array(
-				'mode' => 'preview',
-				'data' => array(
-					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/sonder/category.png',
-				),
-			),
-		),
-	));
-
-
-	//category-all
-	acf_register_block_type(array(
-		'name' => 'category-all',
-		'title' => __('Alle Berichte'),
-		'description' => __('Alle Berichte'),
-		'render_template' => 'template-parts/blocks/sonder/category-all.php',
+		'name' => 'contacts',
+		'title' => esc_html__('Contacts', 'wayup'),
+		'description' => esc_html__('For Page Contacts', 'wayup'),
+		'render_template' => 'template-parts/blocks/contact-page.php',
 		'category' => 'page-modules',
 		'mode' => 'edit',
-		'icon' => 'format-gallery',
-		'keywords' => array('category'),
+		'icon' => 'dashicons-phone',
+		'keywords' => array('about', 'page'),
 		'post_types' => array('page'),
+		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
 		'example' => array(
 			'attributes' => array(
 				'mode' => 'preview',
 				'data' => array(
-					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/sonder/category-all.png',
+					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/contacts.png',
 				),
 			),
 		),

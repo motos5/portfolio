@@ -29,20 +29,9 @@ class Wayup_Widget_Subscribe extends WP_Widget {
                 <?php printf(esc_html__('%1$s', 'wayup'), $title); ?>
             </div>
         <?php } ?>
+        
         <?php echo do_shortcode($shortcode); ?>
-		<!-- <form action="#" class="subscr__form log" id="popupSubscribe">
-			<div class="log__group">
-				<label>Имя</label>
-				<input type="text" name="name_mod" class="log__input">
-			</div>
-			<div class="log__group">
-				<label>Email</label>
-				<input type="email" name="email" class="log__input">
-			</div>
-			<div class="log__btn">
-				<input id="subscribe" type="submit" data-submit value="Подписаться" class="btn"/>
-			</div>
-		</form> -->
+
 	</div>
             
         <?php echo $args['after_widget'];

@@ -17,6 +17,8 @@ $phone_3 = $footer_contacts['phone_3'];
 $phone_3_link = $footer_contacts['phone_3_link'];
 $address = $footer_contacts['address'];
 $e_mail = $footer_contacts['e_mail'];
+$subscribe_form = $footer_contacts['subscribe_form'];
+
 
 
 $footer_info = get_field('footer_info', 'option');
@@ -145,10 +147,9 @@ $footer_copyrights = get_field('footer_copyrights', 'option');
             <?php if($section_4) { ?>
                 <p class="subscribe__title"><?php printf(esc_html__('%1$s', 'wayup'), $section_4); ?></p>
             <?php } ?>
-            <form action="#" class="subscribe__form" id="popupSubscribe">
-                <input type="text" name="email" class="subscribe__input" placeholder="Ваш email">
-                <button class="subscribe__btn btn" data-submit>Подписаться</button>
-            </form>
+
+            <?php echo do_shortcode($subscribe_form); ?>
+            
             <div class="control">
                 <div class="language">
                     <ul>
