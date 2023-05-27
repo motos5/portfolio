@@ -1,0 +1,44 @@
+{
+  "name": "wpweb.inf.ua",
+  "version": "1.0.0",
+  "description": "Assembly for working with the project WPWeb",
+  "main": "index.js",
+  "dependencies": {
+    "ion-rangeslider": "^2.3.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.28.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify-es": "^3.0.0",
+    "rateyo": "^2.3.2",
+    "sass": "^1.58.3",
+    "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/motos5/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "create",
+    "websites",
+    "wordpress",
+    "php",
+    "html",
+    "css"
+  ],
+  "author": "Vitaly Izotov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/motos5/portfolio/issues"
+  },
+  "homepage": "https://github.com/motos5/portfolio#readme"
+}
