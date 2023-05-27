@@ -35,7 +35,8 @@ get_header();
     <div class="wrapper">
         <div class="event__content">
             
-        <?php the_content(); ?>
+            <?php the_content(); ?>
+
             <div class="event__wrap">
                 <div class="share">
                     <p class="share__title">
@@ -87,6 +88,12 @@ get_header();
                     <?php } ?>
                 </ul>
             </div>
+            
+            <?php
+            if ( ( is_singular() && ( have_comments() || 'open' == $post->comment_status ) ) ) {
+                comments_template();
+            }
+            ?>
         </div>
         <?php get_sidebar(); ?>
         
