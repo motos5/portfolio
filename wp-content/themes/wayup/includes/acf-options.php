@@ -25,8 +25,13 @@ function add_custom_block_categories($block_categories, $editor_context)
 		array_push(
 			$block_categories,
 			array(
-				'slug' => 'page-modules',
-				'title' => esc_html__('Pages Module', 'wayup'),
+				'slug' => 'contacts-page',
+				'title' => esc_html__('Wayup Contacts Page', 'wayup'),
+				'icon' => null,
+			),
+			array(
+				'slug' => 'about-page',
+				'title' => esc_html__('Wayup About Page', 'wayup'),
 				'icon' => null,
 			)
 		);
@@ -37,16 +42,16 @@ add_filter('block_categories_all', 'add_custom_block_categories', 10, 2);
 
 function acf_init_block_types(){
 
-	// Contacts
+	// Contacts Page
 	acf_register_block_type(array(
 		'name' => 'contacts',
 		'title' => esc_html__('Contacts', 'wayup'),
 		'description' => esc_html__('For Page Contacts', 'wayup'),
 		'render_template' => 'template-parts/blocks/contact-page.php',
-		'category' => 'page-modules',
+		'category' => 'contacts-page',
 		'mode' => 'edit',
-		'icon' => 'dashicons-phone',
-		'keywords' => array('about', 'page'),
+		'icon' => 'phone',
+		'keywords' => array('contacts', 'page'),
 		'post_types' => array('page'),
 		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
 		'example' => array(
@@ -54,6 +59,94 @@ function acf_init_block_types(){
 				'mode' => 'preview',
 				'data' => array(
 					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/contacts.png',
+				),
+			),
+		),
+	));
+
+	// About Page | About Company
+	acf_register_block_type(array(
+		'name' => 'about-company',
+		'title' => esc_html__('About Company', 'wayup'),
+		'description' => esc_html__('Block About Company for About Page', 'wayup'),
+		'render_template' => 'template-parts/blocks/about-company.php',
+		'category' => 'about-page',
+		'mode' => 'edit',
+		'icon' => 'image-filter',
+		'keywords' => array('about', 'company'),
+		'post_types' => array('page'),
+		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
+		'example' => array(
+			'attributes' => array(
+				'mode' => 'preview',
+				'data' => array(
+					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/about-company.png',
+				),
+			),
+		),
+	));
+
+	// About Page | About Number
+	acf_register_block_type(array(
+		'name' => 'about-number',
+		'title' => esc_html__('About Number', 'wayup'),
+		'description' => esc_html__('Block About Number for About Page', 'wayup'),
+		'render_template' => 'template-parts/blocks/about-number.php',
+		'category' => 'about-page',
+		'mode' => 'edit',
+		'icon' => 'image-filter',
+		'keywords' => array('about', 'number'),
+		'post_types' => array('page'),
+		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
+		'example' => array(
+			'attributes' => array(
+				'mode' => 'preview',
+				'data' => array(
+					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/about-number.png',
+				),
+			),
+		),
+	));
+
+	// About Page | Contact Us
+	acf_register_block_type(array(
+		'name' => 'about-contact',
+		'title' => esc_html__('About Contact', 'wayup'),
+		'description' => esc_html__('Block About Contact for About Page', 'wayup'),
+		'render_template' => 'template-parts/blocks/about-contact.php',
+		'category' => 'about-page',
+		'mode' => 'edit',
+		'icon' => 'image-filter',
+		'keywords' => array('about', 'contact'),
+		'post_types' => array('page'),
+		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
+		'example' => array(
+			'attributes' => array(
+				'mode' => 'preview',
+				'data' => array(
+					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/about-contact.png',
+				),
+			),
+		),
+	));
+
+	// About Page | Team
+	acf_register_block_type(array(
+		'name' => 'about-team',
+		'title' => esc_html__('About Team', 'wayup'),
+		'description' => esc_html__('Block About Team for About Page', 'wayup'),
+		'render_template' => 'template-parts/blocks/about-team.php',
+		'category' => 'about-page',
+		'mode' => 'edit',
+		'icon' => 'image-filter',
+		'keywords' => array('about', 'team'),
+		'post_types' => array('page'),
+		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
+		'example' => array(
+			'attributes' => array(
+				'mode' => 'preview',
+				'data' => array(
+					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/about-team.png',
 				),
 			),
 		),
