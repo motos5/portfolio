@@ -59,7 +59,7 @@ $news = new WP_Query( [
                                     <svg width="15" height="15">
                                         <use xlink:href="#link"/>
                                     </svg>
-                                    Поделиться:
+                                    <?php echo esc_html__('Share', 'wayup'); ?>:
                                 </p>
                                 <ul class="social">
                                     <?php

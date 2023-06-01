@@ -1,4 +1,15 @@
 <?php
+register_taxonomy(
+    'category-cases',
+    'cases',
+    array(
+        "label" => esc_html__('Category for Cases', 'wayup'),
+        "singular_label" => esc_html__('Category for Case', 'wayup'),
+        'rewrite' => array( 'slug' => 'case' ), // Slug Taxpnomy
+        "hierarchical" => true,
+    )
+);
+
 register_post_type('cases', array(
     'labels'             => array(
         'name'               => esc_html__('Cases', 'wayup'),

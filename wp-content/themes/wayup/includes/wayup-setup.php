@@ -9,6 +9,7 @@ function wayup_setup() {
 
 	// Add Image Size
 	add_image_size( 'archive-testimonials', 225, 230, true );
+	add_image_size( 'home-testimonials', 225, 332, true );
 	add_image_size( 'single-services', 1170, 635, true );
 	add_image_size( 'archive-cases', 438, 455, true );
 	add_image_size( 'archive-news', 409, 266, true );
@@ -48,5 +49,8 @@ function wayup_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	// WooCommerce Support
+	add_theme_support( 'woocommerce' );
 }
 add_action( 'after_setup_theme', 'wayup_setup' );

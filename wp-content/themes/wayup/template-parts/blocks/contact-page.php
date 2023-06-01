@@ -7,20 +7,11 @@ $phones = $contacts_data['phones'];
 $email = $contacts_data['email'];
 
 
-
-
 $title_right = get_field('contacts_title_right');
 $subtitle_right = get_field('contacts_subtitle_right');
 
 $conacts_schedule = get_field('conacts_schedule');
 $contacts_map_shortcode = get_field('contacts_map_shortcode');
-
-
-
-
-
-
-
 
 ?>
 
@@ -84,6 +75,10 @@ $contacts_map_shortcode = get_field('contacts_map_shortcode');
             <?php } ?>
         </div>
         <form class="inner__form log contacts-form" action="<?php echo admin_url('admin-ajax.php?action=contacts'); ?>" id="popupOrder">
+            <?php
+                // Nonces
+                wp_nonce_field('contacts_form', '_wayup');
+            ?>
             <?php if($title_right || $subtitle_right) { ?>
                 <p class="log__title"><?php printf(esc_html__('%1$s', 'wayup'), $title_right); ?></p>
                 <p class="log__subtitle"><?php printf(esc_html__('%1$s', 'wayup'), $subtitle_right); ?></p>
