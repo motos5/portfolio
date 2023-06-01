@@ -24,7 +24,6 @@ get_header();
 					<p class="tabs__descr"><?php printf(esc_html__('%1$s', 'wayup'), $text); ?></p>
 				<?php } ?>
 
-				<!-- Cases titles -->
 				<?php
 					$services_types = get_terms( array(
 						'taxonomy' => 'category-services',
@@ -92,7 +91,9 @@ get_header();
 							<li class="services__item <?php echo $services__item; ?>">
 								<h3 class="services__heading"><?php the_title(); ?></h3>
 								<div class="services__descr"><?php the_excerpt(); ?></div>
-								<p class="services__price"><?php echo esc_html($main_currency); ?><?php printf(esc_html('%1$s', 'wayup'), $services_price); ?></p>
+								<?php if($main_currency || $services_price) { ?>
+									<p class="services__price"><?php echo esc_html($main_currency); ?><?php printf(esc_html('%1$s', 'wayup'), $services_price); ?></p>
+								<?php } ?>
 								<a href="<?php the_permalink(); ?>" class="services__order btn"><?php echo esc_html__('More', 'wayup') ?></a>
 								<div class="services__bg <?php echo $services__bg; ?>"></div>
 							</li>

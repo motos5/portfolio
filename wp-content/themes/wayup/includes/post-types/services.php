@@ -1,14 +1,14 @@
 <?php
 register_taxonomy(
-        'category-services',
-        'services',
-        array(
-            "label" => esc_html__('Category for Services', 'wayup'),
-            "singular_label" => esc_html__('Category for Service', 'wayup'),
-            'rewrite' => array( 'slug' => 'service' ), // Slug Taxpnomy
-            "hierarchical" => true,
-        )
-    );
+    'category-services',
+    'services',
+    array(
+        "label" => esc_html__('Category for Services', 'wayup'),
+        "singular_label" => esc_html__('Category for Service', 'wayup'),
+        'rewrite' => array( 'slug' => 'service' ), // Slug Taxpnomy
+        "hierarchical" => true,
+    )
+);
 
 register_post_type('services', array(
     'labels'             => array(

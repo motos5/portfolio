@@ -33,6 +33,11 @@ function add_custom_block_categories($block_categories, $editor_context)
 				'slug' => 'about-page',
 				'title' => esc_html__('Wayup About Page', 'wayup'),
 				'icon' => null,
+			),
+			array(
+				'slug' => 'home-page',
+				'title' => esc_html__('Wayup Home Page', 'wayup'),
+				'icon' => null,
 			)
 		);
 	}
@@ -147,6 +152,138 @@ function acf_init_block_types(){
 				'mode' => 'preview',
 				'data' => array(
 					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/about-team.png',
+				),
+			),
+		),
+	));
+
+	// Home Page | Help
+	acf_register_block_type(array(
+		'name' => 'home-help',
+		'title' => esc_html__('Home Help', 'wayup'),
+		'description' => esc_html__('Block Help for Home Page', 'wayup'),
+		'render_template' => 'template-parts/blocks/home-help.php',
+		'category' => 'home-page',
+		'mode' => 'edit',
+		'icon' => 'align-full-width',
+		'keywords' => array('home', 'help'),
+		'post_types' => array('page'),
+		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
+		'example' => array(
+			'attributes' => array(
+				'mode' => 'preview',
+				'data' => array(
+					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/home-help.png',
+				),
+			),
+		),
+	));
+
+	// Home Page | Choice
+	acf_register_block_type(array(
+		'name' => 'home-choice',
+		'title' => esc_html__('Home Choice', 'wayup'),
+		'description' => esc_html__('Block Choice for Home Page', 'wayup'),
+		'render_template' => 'template-parts/blocks/home-choice.php',
+		'category' => 'home-page',
+		'mode' => 'edit',
+		'icon' => 'align-full-width',
+		'keywords' => array('home', 'choice'),
+		'post_types' => array('page'),
+		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
+		'example' => array(
+			'attributes' => array(
+				'mode' => 'preview',
+				'data' => array(
+					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/home-choice.png',
+				),
+			),
+		),
+	));
+
+	// Home Page | Cases
+	acf_register_block_type(array(
+		'name' => 'home-cases',
+		'title' => esc_html__('Home Cases', 'wayup'),
+		'description' => esc_html__('Block Cases for Home Page', 'wayup'),
+		'render_template' => 'template-parts/blocks/home-cases.php',
+		'category' => 'home-page',
+		'mode' => 'edit',
+		'icon' => 'align-full-width',
+		'keywords' => array('home', 'cases'),
+		'post_types' => array('page'),
+		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
+		'example' => array(
+			'attributes' => array(
+				'mode' => 'preview',
+				'data' => array(
+					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/home-cases.png',
+				),
+			),
+		),
+	));
+
+	// Home Page | Clients
+	acf_register_block_type(array(
+		'name' => 'home-clients',
+		'title' => esc_html__('Home Clients', 'wayup'),
+		'description' => esc_html__('Block Clients for Home Page', 'wayup'),
+		'render_template' => 'template-parts/blocks/home-clients.php',
+		'category' => 'home-page',
+		'mode' => 'edit',
+		'icon' => 'align-full-width',
+		'keywords' => array('home', 'clients'),
+		'post_types' => array('page'),
+		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
+		'example' => array(
+			'attributes' => array(
+				'mode' => 'preview',
+				'data' => array(
+					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/home-clients.png',
+				),
+			),
+		),
+	));
+
+	// Home Page | Services
+	acf_register_block_type(array(
+		'name' => 'home-services',
+		'title' => esc_html__('Home Services', 'wayup'),
+		'description' => esc_html__('Block Services for Home Page', 'wayup'),
+		'render_template' => 'template-parts/blocks/home-services.php',
+		'category' => 'home-page',
+		'mode' => 'edit',
+		'icon' => 'align-full-width',
+		'keywords' => array('home', 'services'),
+		'post_types' => array('page'),
+		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
+		'example' => array(
+			'attributes' => array(
+				'mode' => 'preview',
+				'data' => array(
+					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/home-services.png',
+				),
+			),
+		),
+	));
+
+	// Home Page | News
+	acf_register_block_type(array(
+		'name' => 'home-news',
+		'title' => esc_html__('Home News', 'wayup'),
+		'description' => esc_html__('Block News for Home Page', 'wayup'),
+		'render_template' => 'template-parts/blocks/home-news.php',
+		'category' => 'home-page',
+		'mode' => 'edit',
+		'icon' => 'align-full-width',
+		'keywords' => array('home', 'news'),
+		'post_types' => array('page'),
+		'enqueue_style' => get_template_directory_uri() . '/assets/css/main.min.css',
+		'example' => array(
+			'attributes' => array(
+				'mode' => 'preview',
+				'data' => array(
+					'gutenberg_preview_image' => get_template_directory_uri() . '/template-parts/blocks/home-news.png',
 				),
 			),
 		),
