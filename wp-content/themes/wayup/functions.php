@@ -5,7 +5,8 @@ if ( ! defined( '_S_VERSION' ) ) {
 }
 
 
-
+// WooCommerce Functions
+require_once __DIR__ . '/includes/woo.php';
 // Include Wayup Setup
 require_once __DIR__ . '/includes/wayup-setup.php';
 // Include Wayup Enqueue

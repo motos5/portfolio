@@ -14,6 +14,11 @@ function wayup_acf_init() {
             'menu_title'	=> esc_html__('Post Types Settings', 'wayup'),
             'parent_slug'	=> 'theme-general-settings',
         ));
+        acf_add_options_sub_page(array(
+            'page_title' 	=> esc_html__('WooCommerce Settings', 'wayup'),
+            'menu_title'	=> esc_html__('WooCommerce Settings', 'wayup'),
+            'parent_slug'	=> 'theme-general-settings',
+        ));
     }
 }
 add_action('acf/init', 'wayup_acf_init');

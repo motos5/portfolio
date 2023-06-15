@@ -184,6 +184,12 @@ $footer_copyrights = get_field('footer_copyrights', 'option');
     </div>
 </footer><!-- End footer -->
 
+<?php
+if(is_singular('product')) {
+    get_template_part('template-parts/popups/order-popup');
+}
+?>
+
 <?php wp_footer(); ?>
 </body>
 </html>
