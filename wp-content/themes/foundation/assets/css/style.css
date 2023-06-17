@@ -2,6 +2,10 @@
   min-height: 55px;
 }
 
+.mission-content p {
+  color: #000;
+}
+
 .site-footer .row {
   margin-left: auto;
   margin-right: auto;
@@ -942,7 +946,7 @@ footer .form-control {
 
 .block-testimony-1 {
   padding: 20px; }
-  .block-testimony-1 blockquote {
+  .block-testimony-1 div {
     background: #fff;
     padding: 30px;
     font-style: italic;
