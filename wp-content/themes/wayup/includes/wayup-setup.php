@@ -6,6 +6,8 @@ function wayup_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
+	// WooCommerce Support
+	add_theme_support( 'woocommerce' );
 
 	// Add Image Size
 	add_image_size( 'archive-testimonials', 225, 230, true );
@@ -49,8 +51,5 @@ function wayup_setup() {
 			'flex-height' => true,
 		)
 	);
-
-	// WooCommerce Support
-	add_theme_support( 'woocommerce' );
 }
 add_action( 'after_setup_theme', 'wayup_setup' );

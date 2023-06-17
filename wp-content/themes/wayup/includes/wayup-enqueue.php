@@ -8,7 +8,7 @@ function wayup_scripts() {
 
 	// Scripts
 	wp_deregister_script( 'jquery' );
-	wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js');
+	wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js');
 	wp_enqueue_script( 'jquery');
 	
 	wp_register_script( 'goodshare', 'https://cdn.jsdelivr.net/npm/goodshare.js@4/goodshare.min.js', array(), _S_VERSION, true);
@@ -18,13 +18,40 @@ function wayup_scripts() {
 
 	/*=========== Objects for Buttons on Testimonial Page ============= */
 	// Object for URL in JavaScript (Button for Testimonial Page - Collapse)
-    $collapse = array( 'wayup-js-main' => esc_html('Collapse', 'wayup'));
+    $collapse = array( 'wayup-js-main' => esc_html__('Collapse', 'wayup'));
     wp_localize_script( 'wayup-js-main', 'wnm_collapse', $collapse );
 	
 	// Object for URL in JavaScript (Button for Testimonial Page - Read more)
-    $read_more = array( 'wayup-js-main' => esc_html('Read more', 'wayup'));
+    $read_more = array( 'wayup-js-main' => esc_html__('Read more', 'wayup'));
     wp_localize_script( 'wayup-js-main', 'wnm_read_more', $read_more );
 	/*=========== End Objects for Buttons on Testimonial Page ============= */
+
+	/*=========== Objects for Sirt Product on Shop Page ============= */
+	// Objects for Sort Products {URL) on Shop Page
+	$shoppage_url = array( 'wayup-js-main' => home_url('/') . 'shop/');
+    wp_localize_script( 'wayup-js-main', 'wnm_shoppage_url', $shoppage_url );
+
+	// Objects for Sort Products {Translate) on Shop Page
+	$menu_order = array( 'wayup-js-main' => esc_html__('Default sorting', 'wayup'));
+    wp_localize_script( 'wayup-js-main', 'wnm_menu_order', $menu_order );
+	
+	$popularity = array( 'wayup-js-main' => esc_html__('Sort by popularity', 'wayup'));
+    wp_localize_script( 'wayup-js-main', 'wnm_popularity', $popularity );
+	
+	$rating = array( 'wayup-js-main' => esc_html__('Sort by average rating', 'wayup'));
+    wp_localize_script( 'wayup-js-main', 'wnm_rating', $rating );
+	
+	$date = array( 'wayup-js-main' => esc_html__('Sort by price: low to high', 'wayup'));
+    wp_localize_script( 'wayup-js-main', 'wnm_date', $date );
+	
+	$price = array( 'wayup-js-main' => esc_html__('Sort by price: high to low', 'wayup'));
+    wp_localize_script( 'wayup-js-main', 'wnm_price', $price );
+
+	$price_desc = array( 'wayup-js-main' => esc_html__('Sort by price: high to low', 'wayup'));
+    wp_localize_script( 'wayup-js-main', 'wnm_price_desc', $price_desc );
+	/*=========== End Objects for Sirt Product on Shop Page ============= */
+
+
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

@@ -5403,7 +5403,8 @@ button {
   align-items: center;
 }
 
-.quantity .plus {
+.quantity .plus,
+.quantity .plus-popup {
   line-height: 25px;
 }
 
@@ -5594,7 +5595,7 @@ button {
   margin: 53px 0 24px;
 }
 
-.product input.product__btn {
+.product button.product__btn {
   margin-right: 20px;
   background: none;
   box-shadow: none;
@@ -5602,7 +5603,7 @@ button {
   color: #01b4fe;
 }
 
-.product input.product__btn:hover {
+.product button.product__btn:hover {
   background-color: #01b4fe;
   color: #fff;
   box-shadow: 0 0 0 4px #fff, 0 0 0 6px #01b4fe;
@@ -5613,8 +5614,8 @@ button {
 }
 
 .product__btn:before {
-  width: 220px;
-  content: 'Купить в один клик';
+  width: 222px;
+  content: '';
 }
 
 .product .share {
@@ -6827,7 +6828,8 @@ button {
   font-size: 20px;
 }
 
-.market__show {
+.market__show,
+.woocommerce-result-count {
   color: #858585;
   font-size: 14px;
 }
@@ -6844,7 +6846,7 @@ button {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-right: -25px;
+  
 }
 
 .products .discount,
@@ -6863,10 +6865,12 @@ button {
   line-height: 28px;
 }
 
+/*
 .products .price__old,
 .products .rate {
   display: none;
 }
+*/
 
 .products .rate {
   width: 70px;
@@ -6902,9 +6906,8 @@ button {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 25px;
+  margin-bottom: 25px !important;
   position: relative;
-  margin-right: 25px;
   width: calc(33.3% - 25px);
   background-color: #fff;
   border-radius: 3px;
@@ -6915,16 +6918,21 @@ button {
   margin-right: 25px;
 }
 
-.products__item.sale .price__old {
+.products__item.sale .price__old,
+.price del {
   text-decoration: line-through;
   font-size: 14px;
   margin-right: 10px;
 }
 
-.products__item.sale .price__now {
+
+
+.products__item.sale .price__now,
+.price ins {
   color: #00b8ff;
   font-size: 18px;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .products__item.sale span.discount,
@@ -6953,9 +6961,13 @@ button {
   justify-content: center;
 }
 
-.products__img img {
-  max-height: 280px;
+.products__img img,
+.woocommerce img,
+.woocommerce-page img {
+  height: auto;
   width: auto;
+  margin: 0 auto;
+  object-fit: cover;
 }
 
 .products__bottom {
@@ -7034,7 +7046,7 @@ button {
   box-shadow: 0 5px 20px rgba(0, 163, 255, 0.6);
 }
 
-.products .pagination {
+.market .pagination {
   width: 100%;
   margin-left: 0;
 }
@@ -7082,6 +7094,9 @@ button {
 .sort-menu span {
   white-space: nowrap;
   cursor: pointer;
+  right: 10px;
+  position: absolute;
+  top: -44px;
 }
 
 .sort-menu span > a {
@@ -7109,7 +7124,7 @@ button {
 
 .sort-menu ul {
   position: absolute;
-  top: 100%;
+  top: 20px;
   left: 0;
   background: #fff;
   width: 100%;
@@ -7293,6 +7308,11 @@ button {
   object-fit: cover;
 }
 
+/* Other styles */
+.woocommerce .quantity .qty {
+  width: 36px;
+}
+
 #dsampovikas{
    
   transform: translateY(750px);
@@ -7367,6 +7387,75 @@ button {
 .widget-news {
   margin-bottom: 30px;
 }
+
+/* WooCommerce Rating on Shop Page */
+.products__detail .price{
+  margin-right: 25px;
+}
+
+.products__detail .star-rating {
+  font-size: 11px;
+}
+
+.products__bottom .products__detail .star-rating {
+  margin: 0;
+}
+
+.products__detail .star-rating::before,
+.single-product .star-rating::before{
+  color: #FFCC00;
+}
+
+.products__detail .star-rating span::before,
+.single-product .star-rating span::before {
+  color: #FFCC00;
+}
+
+.single-product div.product .woocommerce-product-rating {
+  margin-top: 13px;
+  margin-bottom: 0;
+  /* margin-bottom: 1.618em; */
+}
+/* End WooCommerce Rating on Shop Page */
+
+/* WooCommerce Sale Status */
+.sale-status {
+  position: absolute;
+  right: 21px;
+  top: 21px;
+  display: inline-block;
+  height: 28px;
+  padding: 0 10px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 28px;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 2px;
+}
+
+/* WooCommerce Add to Cart Button on Shop Page */
+.products__bottom {
+	flex-wrap: wrap;
+}
+
+.products__detail {
+  width: 70%;
+}
+
+
+.woocommerce a.added_to_cart {
+	text-align: center;
+	width: 100%;
+  background: 7px 6px no-repeat, linear-gradient(-30deg, #00a2ff 0%, #0cf 100%);
+  color: #fff;
+  padding: .5em;
+  margin-top: 10px;
+  border-radius: 25px;
+}
+
+
 
 @media screen and (min-width: 480px) {
   .team__item:hover {

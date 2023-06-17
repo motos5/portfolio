@@ -2,14 +2,11 @@
 /**
  * Plugin Name: Wawe Elementor
  * Description: Plugin for Wawe Elementor
- * Plugin URI:  https://wawe.com/plugin
+ * Plugin URI:  https://wpweb.inf.ua/
  * Version:     1.0.0
  * Author:      Vitaliy Izotov
- * Author URI:  https://developers.elementor.com/
+ * Author URI:  https://wpweb.inf.ua/
  * Text Domain: wawe-elementor
- *
- * Elementor tested up to: 3.9.2
- * Elementor Pro tested up to: 3.9.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

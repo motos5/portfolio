@@ -12,6 +12,16 @@ function wayup_widgets_init() {
 		'after_title'  => '</h5>'
 	));
 
+    // Regiter Sidebar Shop
+	register_sidebar(array(
+		'name'  => esc_html__('Shop Page', 'wayup'),
+		'id'  => "sidebar-shop",
+		'before_widget'  => '<section class="widget-news %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h5 class="widgettitle mb-3">',
+		'after_title'  => '</h5>'
+	));
+
     // Регистрация и активация виджета.
     register_widget( 'wayup_widget_search' );
     register_widget( 'wayup_widget_about' );
