@@ -1,0 +1,28 @@
+/*
+// Colors
+$accent: #fe3e57;
+$default: #8d8d8d;
+$title: #29282d;
+$background: #f6f6f6;
+*/
+
+
+// General Stiles
+%button {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 24px;
+    text-align: center;
+    background-color: #ff5441;
+    border: 0;
+    border-radius: 28px;
+    padding: 16px 20px;
+    width: 240px;
+    max-width: 100%;
+    display: inline-block;
+    cursor: pointer;
+    letter-spacing: .02em;
+	box-shadow: 0 0 38px #d44232;
+}
