@@ -23,13 +23,13 @@
 				<nav class="header-page__nav">
 					<ul class="header-page__list">
 						<li class="header-page__item">
-							<a class="header-page__link" href="#">пицца</a>
+							<a class="header-page__link" href="#">pizza</a>
 						</li>
 						<li class="header-page__item">
-							<a class="header-page__link" href="#">о нас</a>
+							<a class="header-page__link" href="#">about</a>
 						</li>
 						<li class="header-page__item">
-							<a class="header-page__link" href="#">контакты</a>
+							<a class="header-page__link" href="#">contacts</a>
 						</li>
 					</ul>
 				</nav>

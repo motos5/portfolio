@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65.31 9.97">
   <defs>
     <style>
-      .cls-1{fill:#ffa650}.cls-2{fill:#dbdbdb}
+      .cls-1{fill:$accent}.cls-2{fill:#dbdbdb}
     </style>
   </defs>
   <g id="Слой_2" data-name="Слой 2">
