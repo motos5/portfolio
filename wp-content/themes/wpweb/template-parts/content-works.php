@@ -1,7 +1,7 @@
 <?php
 
 $works = new WP_Query( [
-	'posts_per_page' => 6,
+	'posts_per_page' => -1,
 	'post_type'      => 'works',  // Какие посты нам нужно выводить
 ] );
 ?>

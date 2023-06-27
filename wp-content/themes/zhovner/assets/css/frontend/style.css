@@ -6,6 +6,43 @@
   --text-danger: #f00;
   --text-small: #aaa;
 }
+
+#form-loader {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: green;
+}
+
+#contact-form button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.header-catalog .name,
+.header-order .name {
+  position: relative;
+}
+
+.header-catalog .name span,
+.header-order .name span {
+  position: relative;
+}
+
+.header-catalog .name::before,
+.header-order .name::before {
+  content: '';
+  position: absolute;
+  top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+  background-color: rgba(0, 0, 0, .6);
+}
+
 /* Общие */
 * {
   box-sizing: border-box;

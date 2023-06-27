@@ -1,3 +1,8 @@
+<?php
+// (Block Settings)
+$phone_number = get_field('phone_number', 'option');
+?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -32,16 +37,14 @@
 					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 				] );
 			?>
-			<!-- <ul>
-				<li><a href="index.html">Главная</a></li>
-				<li><a href="about.html">О компании</a></li>
-				<li><a href="catalog.html">Каталог</a></li>
-				<li><a href="order.html">На заказ</a></li>
-				<li><a href="portfolio.html">Наши работы</a></li>
-				<li><a href="contacts.html">Контакты</a></li>
-			</ul> -->
+			
 			<div class="phone">
-				<a href="tel:+79186687673">&#9742; +7 (918) 668-76-73</a>
+			<?php
+				$phone= $phone_number;
+				$parts=sscanf($phone,'%1c%2c%3c%3c%2c%2c'); // Количество символов в частях
+				$phone_number_format = "+$parts[1] ($parts[2]) $parts[3]-$parts[4]-$parts[5]"; // Вывод полученных частей
+			?>
+				<a href="tel:<?php echo esc_attr($phone_number); ?>">&#9742; <?php echo esc_html($phone_number_format); ?></a>
 			</div>
 		</div>
 	</div>
