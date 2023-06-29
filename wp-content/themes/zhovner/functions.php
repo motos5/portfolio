@@ -97,23 +97,6 @@ function zhovner_menus() {
 }
 add_action('init', 'zhovner_menus');
 
-/*
-// Add CSS class for menu HTML teg <li>
-function o_marketing_css_class_li($classes) {
-	$classes[] = 'menu__list-item';
-	return $classes;
-}
-add_filter('nav_menu_css_class', 'o_marketing_css_class_li', 10, 1);
-
-// Add CSS class for menu HTML teg <a>
-function o_marketing_css_class_a($atts) {
-	$atts['class'] = "menu__list-link";
-	return $atts;
-}
-add_filter( 'nav_menu_link_attributes', 'o_marketing_css_class_a');
-// ================= END MENU ============== //'
-*/
-
 // Include ACF Options File
 require_once __DIR__ . '/includes/acf-options.php';
 // Include Order Contact Form

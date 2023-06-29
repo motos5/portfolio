@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){ 
     // Slick Slider
-    $('.works__list').slick({
+    $('.works__list-home').slick({
         dots: true,
         dotsClass: 'works__slider-dots',
         arrows: false,
@@ -98,8 +98,9 @@ jQuery(document).ready(function($){
     $('.menu a, .see').on("click", function (event) {
 		//отменяем стандартную обработку нажатия по ссылке
         let homeAttr = $('.menu a').attr('href');
-
-        if(homeAttr !== 'http://wpweb.inf.ua/') {
+        let url = window.location.href;
+        
+        if(homeAttr !== url.slice(0, 21)) {
             event.preventDefault();
         }
 

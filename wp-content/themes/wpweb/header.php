@@ -1,4 +1,27 @@
 <?php
+	$header_image = get_field('header_image', 'option');
+
+
+	$style_header = '';
+	$header_top = '';
+	$menu_list = '';
+	if($header_image) {
+		$style_header = 'style="background-image: url(' . esc_attr($header_image) . ');"';
+	} else {
+		$style_header = 'style="background-image: url(' . get_template_directory_uri() . '/assets/img/header-bg.png);"';
+	}
+
+	
+	if(is_page()) {
+		$style_header = $style_header;
+		$header_top = 'header__top';
+		$menu_list ='menu-header';
+	} else {
+		$style_header = 'style="padding-top: 0;"';
+		$header_top = 'header__top box';
+		$menu_list ='menu-other';
+	}
+
 	$title = get_field('header_title', 'option'); 
 	$description = get_field('header_description', 'option');
 ?>
@@ -17,9 +40,9 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="header">
+<header class="header" <?php echo $style_header; ?>>
 	<div class="header__inner">
-		<div class="header__top">
+		<div class="<?php echo $header_top; ?>">
 			<div class="container">
 				<div class="header__top-inner">
 					<?php
@@ -98,7 +121,7 @@
 						
 
 						wp_nav_menu( [
-							'theme_location'  => 'menu-header',
+							'theme_location'  => $menu_list,
 							'container'       => 'nav',
 							'container_class' => 'menu',
 							'menu_class'      => 'menu__list',
@@ -110,26 +133,35 @@
 				</div>
 			</div>
 		</div>
-		<div class="header__content">
-			<div class="container">
-				<div class="header__content-inner">
-					<?php if($title) { ?>
-						<h1 class="header__title">
-							<?php printf(esc_html__('%1$s', 'wpweb'), $title); ?>
-						</h1>
-					<?php } ?>
-					<?php if($description) { ?>
-						<p class="header__description">
-						<?php printf(esc_html__('%1$s', 'wpweb'), $description); ?>
-						</p>
-					<?php } ?>
-					<div class="header__buttons">
-						<a class="btn header__content-btn see" href="#works"><?php echo esc_html__('See Works', 'wpweb') ?></a>
-						<a class="btn header__content-btn cv" href="#"><?php echo esc_html__('Download CV', 'wpweb') ?></a>
+
+		<?php if(is_page()) { ?>
+			<div class="header__content">
+				<div class="container">
+					<div class="header__content-inner">
+						<?php if($title) { ?>
+							<h1 class="header__title">
+								<?php printf(esc_html__('%1$s', 'wpweb'), $title); ?>
+							</h1>
+						<?php } ?>
+						<?php if($description) { ?>
+							<p class="header__description">
+							<?php printf(esc_html__('%1$s', 'wpweb'), $description); ?>
+							</p>
+						<?php } ?>
+						<div class="header__buttons">
+							<a class="btn header__content-btn see" href="#works"><?php echo esc_html__('See Works', 'wpweb') ?></a>
+							<a class="btn header__content-btn cv" href="#"><?php echo esc_html__('Download CV', 'wpweb') ?></a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		<?php } else { ?>
+			<div class="header__content box">
+				<!-- Other Content -->
+			</div>
+		<?php }
+		
+		?>
 	</div>
 	
 	

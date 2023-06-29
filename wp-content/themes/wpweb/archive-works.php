@@ -1,16 +1,17 @@
-<?php
+<?php get_header();
 
 $works = new WP_Query( [
 	'posts_per_page' => -1,
 	'post_type'      => 'works',  // Какие посты нам нужно выводить
 ] );
 ?>
+
 <section class="works" id="works">
-    <div class="container">
+    <div class="container container-works">
         <h2 class="title works__title">List of works</h2>
-        <div class="works__list-box">
-        <img class="works__inner-bg" src="<?php  echo get_template_directory_uri() ?>/assets/img/works-bg.svg" alt="">
-            <div class="works__list-home">
+        <div class="works__list-works">
+        <?php /*<img class="works__inner-bg" src="<?php  echo get_template_directory_uri() ?>/assets/img/works-bg.svg" alt=""> */ ?>
+            <div class="works__list">
                 <?php if ( $works->have_posts() ) : while ( $works->have_posts() ) : $works->the_post(); ?>
                     <div class="works__item">
                         <?php echo get_the_post_thumbnail(get_the_ID(), 'works-homepage', array('class' => "works__item-img",)); ?>
@@ -36,6 +37,7 @@ $works = new WP_Query( [
                 <?php endif; ?>
             </div>
         </div>
-        <a class="btn works__btn" href="<?php echo esc_url(get_post_type_archive_link('works')); ?>"><?php echo esc_html__('See all', 'wpweb'); ?></a>
     </div>
 </section>
+
+<?php get_footer();
