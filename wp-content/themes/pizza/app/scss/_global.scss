@@ -1,0 +1,184 @@
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
+
+lg: 1200px;
+md: 992px;
+sm: 767px;
+xs: 576px;
+*/
+
+body {
+    color: $default;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.375;
+}
+
+.container {
+    padding: 0 15px;
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.btn {
+    @extend %button;
+    transition: background-color .3s, opacity .3s, transform .3s;
+    &:hover {
+        background-color: #F51900;
+        box-shadow: 0 0 38px #F51900;
+    }
+    &:active {
+        opacity: 0.7;
+        transform: scale(0.95);
+    }
+}
+
+.phone {
+    border: 3px solid white;
+    border-radius: 22px;
+    overflow: hidden;
+    &__item {
+        padding: 10px 15px;
+        display: inline-block;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 1;
+        transition: background-color .3s;
+        &:hover {
+            background-color: #fff;
+            color: $default;
+        }
+        &:active {
+            opacity: 0.8;
+        }
+    }
+}
+
+.btn-menu {
+    background-color: transparent;
+    padding: 8px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+.catalog-nav {
+    display: flex;
+    justify-content: center;
+    &__list {
+        display: flex;
+        background-color: white;
+        border-radius: 23px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+    }
+    &__item:last-of-type .catalog-nav__btn {
+        border-right: none;
+    }
+    &__btn {
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        padding: 11px 15px;
+        min-width: 150px;
+        color: $text;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        font-weight: 900;
+        border-right: 1px solid rgba($text, 0.2);
+        transition: background-color .3s, border-right-color .3s;
+        &.catalog-nav__btn--active {
+            background-color: $default;
+            color: #fff;
+            border-color: $default;
+        }
+        &:not(.catalog-nav__btn--active):hover {
+            background-color: $accent;
+            color: #fff;
+            border-right-color: $accent; 
+        }
+    }
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    &__img {
+        height: auto;
+        max-width: 100%;
+        object-fit: cover;
+        margin: 0 auto 15px;
+    }
+    &__content {
+        flex-grow: 1;
+    }
+    &__title {
+        margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+        font-weight: 900;
+    }
+    &__description {
+        color: $text;
+        margin-bottom: 25px;
+        width: 300px;
+        max-width: 100%;
+    }
+    &__sizes {
+        margin-bottom: 30px;
+        border-radius: 21px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    &__size {
+        border: none;
+        padding: 9px 28px;
+        background-color: white;
+        border-radius: 21px;
+        color: #e6e6e6;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        text-align: center;
+        cursor: pointer;
+    }
+    & .product__size--active {
+        color: #a2a2a2;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__price {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+        font-weight: 900;
+    }
+    &__btn {
+        background-color: #ffa650;
+        box-shadow: none;
+        padding: 11px 15px 13px;
+        width: 200px;
+        &:hover {
+        background-color: #ca7b31;
+            box-shadow: none;
+        }
+        
+    }
+}
