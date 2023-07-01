@@ -24,6 +24,22 @@
 
 	$title = get_field('header_title', 'option'); 
 	$description = get_field('header_description', 'option');
+/*
+	//выполнить код в зависимости от текущего языка
+	$currLang = pll_current_language();
+	
+	if($currLang == "en"){
+		$title = get_field('header_title', 'option'); 
+		$description = get_field('header_description', 'option');
+	} else if($currLang == "uk") {
+		$title = get_field('header_title_uk', 'option'); 
+		$description = get_field('header_description_uk', 'option');
+	} else {
+		$title = get_field('header_title_ru', 'option'); 
+		$description = get_field('header_description_ru', 'option');
+	}
+*/
+	
 ?>
 
 <!doctype html>

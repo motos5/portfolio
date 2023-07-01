@@ -8,7 +8,7 @@ $works = new WP_Query( [
 
 <section class="works" id="works">
     <div class="container container-works">
-        <h2 class="title works__title">List of works</h2>
+        <h2 class="title works__title"><?php echo esc_html__('List of works', 'wpweb'); ?></h2>
         <div class="works__list-works">
         <?php /*<img class="works__inner-bg" src="<?php  echo get_template_directory_uri() ?>/assets/img/works-bg.svg" alt=""> */ ?>
             <div class="works__list">
@@ -21,16 +21,16 @@ $works = new WP_Query( [
                             $field = get_field('work_status', $post->ID);
                             $status = $field;
                             $status_css = '';
-                            if($status == 'Finished') {
+                            if($status == 'Finished' || $status == 'Готово') {
                                 $status_css = 'finished';
-                            } if($status == 'Developing') {
+                            } if($status == 'Developing' || $status == 'В розробці' || $status == 'В разработке') {
                                 $status_css = 'developing';
                             }
                         ?>
                         <?php if( $status ) { ?>
                                 <p class="works__item-status <?php echo $status_css; ?>"><?php echo $status; ?></p>
                         <?php } ?>
-                        <a class="btn works__item-btn" href="<?php echo esc_url(get_field('work_link', $post->ID)); ?>" target="_blank">Visit site</a>
+                        <a class="btn works__item-btn" href="<?php echo esc_url(get_field('work_link', $post->ID)); ?>" target="_blank"><?php echo esc_html__('Visit site', 'wpweb'); ?></a>
                     </div>
                 <?php endwhile; wp_reset_postdata(); else: ?>
                     <?php echo esc_html__('Not found', 'wpweb') ?>

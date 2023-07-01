@@ -98,17 +98,30 @@ jQuery(document).ready(function($){
     $('.menu a, .see').on("click", function (event) {
 		//отменяем стандартную обработку нажатия по ссылке
         let homeAttr = $('.menu a').attr('href');
-        let url = window.location.href;
+        let url = window.location.origin;
         
-        if(homeAttr !== url.slice(0, 21)) {
-            event.preventDefault();
-        }
+        // console.log(homeAttr);
+/*
+        let result = '';
+        if (homeAttr.includes('https://wpweb.inf.ua/')) {
+            result = 'True';
+    } else {
+            result = 'False';
+    }
+
+console.log(result);
+*/
+
 
 		//забираем идентификатор бока с атрибута href
 		var id = $(this).attr("href"),
 		//узнаем высоту от начала страницы до блока на который ссылается якорь
-			top = $(id).offset().top;
+		top = $(id).offset().top;
 
+        if(id == '#about' || id == '#services' || id == '#works' || id == '#contacts') {
+            event.preventDefault();
+        }
+        
 		//анимируем переход на расстояние - top за 1500 мс
 		$("body,html").animate({ scrollTop: top }, 1500);
     });
