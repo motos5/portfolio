@@ -145,7 +145,38 @@
 							'echo'            => true,
 							'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul> <div class="header__menu-buttons"><ul class="socials__list">' . $output_socials_item . '</ul>' . $talk_btn . '</div>',
 						] );
-					?>
+						?>
+
+						<div class="languages">
+						<?php
+						/*
+							// English Lnguage Link
+							$language_en = 'en';
+							$url_en = pll_home_url($language_en);
+							// Spanish Lnguage Link
+							$language_es = 'es';
+							$url_es = pll_home_url($language_es);
+							// Portuguese Lnguage Link
+							$language_pt = 'pt';
+							$url_pt = pll_home_url($language_pt);
+							// French Lnguage Link
+							$language_fr = 'fr';
+							$url_fr = pll_home_url($language_fr);
+						*/
+						?>
+<?php /*
+						<ul class="languages__list" id="languages-list">
+							<output></output>
+							<li class="languages__item active">
+								<a class="languages__link" href="#">
+									EN
+								</a>
+								<img class="languages__img" src="1.png" alt="">
+							</li>
+						</ul>
+						
+						*/ ?>
+					</div>
 				</div>
 			</div>
 		</div>
